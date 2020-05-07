@@ -22,7 +22,10 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
-
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $status = "inactive";
     /**
      * @ORM\Column(type="json")
      */
@@ -110,5 +113,24 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * Get the value of status
+     */
+    public function getStatus(): string
+    {
+        return (string) $this->status;
+    }
+
+    /**
+     * Set the value of status
+     *
+     * @return  self
+     */
+    public function setStatus($status): self
+    {
+        $this->status = $status;
+        return $this;
     }
 }

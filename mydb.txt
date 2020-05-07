@@ -1,0 +1,32 @@
+user
+    id
+    name
+    mail
+    password
+    status (active|inactive)
+    role (user|admin)
+
+quizz
+    id
+    name
+    json
+    id_user(default : 1)
+
+question
+    id
+    id_categorie
+    question
+
+categorie
+    id
+    name
+
+reponse
+    id
+    id_question
+    reponse
+    reponse_expected
+
+game
+    id_quizz
+    id_user

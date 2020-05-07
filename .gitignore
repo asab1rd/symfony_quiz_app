@@ -1,4 +1,6 @@
-
+###
+apprentissage
+mydb.txt
 ###> symfony/framework-bundle ###
 quiz/.env.local
 quiz/.env.local.php

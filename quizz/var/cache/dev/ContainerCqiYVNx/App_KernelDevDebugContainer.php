@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerBxxoMys;
+namespace ContainerCqiYVNx;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -880,11 +880,15 @@ class App_KernelDevDebugContainer extends Container
         $a->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
         $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver($this));
         $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Repository\\CategorieRepository' => ['privates', 'App\\Repository\\CategorieRepository', 'getCategorieRepositoryService', false],
             'App\\Repository\\QuestionRepository' => ['privates', 'App\\Repository\\QuestionRepository', 'getQuestionRepositoryService', false],
+            'App\\Repository\\QuizzRepository' => ['privates', 'App\\Repository\\QuizzRepository', 'getQuizzRepositoryService', false],
             'App\\Repository\\ReponseRepository' => ['privates', 'App\\Repository\\ReponseRepository', 'getReponseRepositoryService', false],
             'App\\Repository\\UserRepository' => ['privates', 'App\\Repository\\UserRepository', 'getUserRepositoryService', false],
         ], [
+            'App\\Repository\\CategorieRepository' => '?',
             'App\\Repository\\QuestionRepository' => '?',
+            'App\\Repository\\QuizzRepository' => '?',
             'App\\Repository\\ReponseRepository' => '?',
             'App\\Repository\\UserRepository' => '?',
         ])));
@@ -1758,6 +1762,23 @@ class App_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private 'App\Repository\CategorieRepository' shared autowired service.
+     *
+     * @return \App\Repository\CategorieRepository
+     */
+    protected function getCategorieRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/CategorieRepository.php';
+
+        return $this->privates['App\\Repository\\CategorieRepository'] = new \App\Repository\CategorieRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
      * Gets the private 'App\Repository\QuestionRepository' shared autowired service.
      *
      * @return \App\Repository\QuestionRepository
@@ -1772,6 +1793,23 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/src/Repository/QuestionRepository.php';
 
         return $this->privates['App\\Repository\\QuestionRepository'] = new \App\Repository\QuestionRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\QuizzRepository' shared autowired service.
+     *
+     * @return \App\Repository\QuizzRepository
+     */
+    protected function getQuizzRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/QuizzRepository.php';
+
+        return $this->privates['App\\Repository\\QuizzRepository'] = new \App\Repository\QuizzRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
     }
 
     /**

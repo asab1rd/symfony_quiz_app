@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -38,6 +40,16 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Quizz::class, mappedBy="id_user")
+     */
+    private $quizzs;
+
+    public function __construct()
+    {
+        $this->quizzs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -133,6 +145,37 @@ class User implements UserInterface
     public function setStatus($status): self
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Quizz[]
+     */
+    public function getQuizzs(): Collection
+    {
+        return $this->quizzs;
+    }
+
+    public function addQuizz(Quizz $quizz): self
+    {
+        if (!$this->quizzs->contains($quizz)) {
+            $this->quizzs[] = $quizz;
+            $quizz->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuizz(Quizz $quizz): self
+    {
+        if ($this->quizzs->contains($quizz)) {
+            $this->quizzs->removeElement($quizz);
+            // set the owning side to null (unless already changed)
+            if ($quizz->getIdUser() === $this) {
+                $quizz->setIdUser(null);
+            }
+        }
+
         return $this;
     }
 }

@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXQuyDIq\App_KernelDevDebugContainer([
     'container.build_hash' => 'XQuyDIq',
-    'container.build_id' => 'f6a61480',
-    'container.build_time' => 1589017392,
+    'container.build_id' => '0709f6bc',
+    'container.build_time' => 1589051780,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXQuyDIq');

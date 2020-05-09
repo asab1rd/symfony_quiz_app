@@ -24,10 +24,10 @@ class Quizz
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $questions = [];
+    // /**
+    //  * @ORM\Column(type="array")
+    //  */
+    // private $questions = [];
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="quizzs")
@@ -72,17 +72,16 @@ class Quizz
         return $this;
     }
 
-    public function getQuestions(): ?array
-    {
-        return $this->questions;
-    }
+    // public function getQuestions(): ?array
+    // {
+    //     return $this->questions;
+    // }
 
-    public function setQuestions(array $questions): self
-    {
-        $this->questions = $questions;
-
-        return $this;
-    }
+    // public function setQuestions(array $questions): self
+    // {
+    //     $this->questions = $questions;
+    //     return $this;
+    // }
 
     public function getIdUser(): ?User
     {
@@ -142,7 +141,6 @@ class Quizz
         if ($this->question->contains($question)) {
             $this->question->removeElement($question);
         }
-
         return $this;
     }
 }

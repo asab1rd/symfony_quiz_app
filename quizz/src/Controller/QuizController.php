@@ -42,4 +42,11 @@ class QuizController extends AbstractController
             ]);
         }
     }
+
+    /**
+     * @Route("/quiz/{id}", name="quiz_play",  requirements={"id"="\d+"})
+     */
+    public function play($id){
+
+    }
 }

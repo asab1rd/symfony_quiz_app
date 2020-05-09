@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\QuizzRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,22 @@ class Quizz
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $level;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="quizzs")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Question::class)
+     */
+    private $question;
+
+    public function __construct()
+    {
+        $this->question = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +104,44 @@ class Quizz
     public function setLevel(?string $level): self
     {
         $this->level = $level;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Categorie
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Categorie $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Question[]
+     */
+    public function getQuestion(): Collection
+    {
+        return $this->question;
+    }
+
+    public function addQuestion(Question $question): self
+    {
+        if (!$this->question->contains($question)) {
+            $this->question[] = $question;
+        }
+
+        return $this;
+    }
+
+    public function removeQuestion(Question $question): self
+    {
+        if ($this->question->contains($question)) {
+            $this->question->removeElement($question);
+        }
 
         return $this;
     }

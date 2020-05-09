@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerCqiYVNx;
+namespace ContainerXQuyDIq;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -39,6 +39,7 @@ class App_KernelDevDebugContainer extends Container
         ];
         $this->methodMap = [
             'App\\Controller\\MainController' => 'getMainControllerService',
+            'App\\Controller\\QuizController' => 'getQuizControllerService',
             'App\\Controller\\RegistrationController' => 'getRegistrationControllerService',
             'App\\Controller\\SecurityController' => 'getSecurityControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService',
@@ -421,6 +422,23 @@ class App_KernelDevDebugContainer extends Container
         $this->services['App\\Controller\\MainController'] = $instance = new \App\Controller\MainController();
 
         $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\MainController', $this));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'App\Controller\QuizController' shared autowired service.
+     *
+     * @return \App\Controller\QuizController
+     */
+    protected function getQuizControllerService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/framework-bundle/Controller/AbstractController.php';
+        include_once \dirname(__DIR__, 4).'/src/Controller/QuizController.php';
+
+        $this->services['App\\Controller\\QuizController'] = $instance = new \App\Controller\QuizController();
+
+        $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\QuizController', $this));
 
         return $instance;
     }
@@ -1660,22 +1678,44 @@ class App_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.Uwb9bT5' shared service.
+     * Gets the private '.service_locator.SFTGKLC' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
      */
-    protected function get_ServiceLocator_Uwb9bT5Service()
+    protected function get_ServiceLocator_SFTGKLCService()
     {
-        return $this->privates['.service_locator.Uwb9bT5'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+        return $this->privates['.service_locator.SFTGKLC'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Controller\\QuizController::showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
             'App\\Controller\\RegistrationController::register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
             'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
+            'App\\Controller\\QuizController:showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
             'App\\Controller\\RegistrationController:register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
             'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
         ], [
+            'App\\Controller\\QuizController::showCategories' => '?',
+            'App\\Controller\\QuizController::showQuizzesByCategory' => '?',
             'App\\Controller\\RegistrationController::register' => '?',
             'App\\Controller\\SecurityController::login' => '?',
+            'App\\Controller\\QuizController:showCategories' => '?',
+            'App\\Controller\\QuizController:showQuizzesByCategory' => '?',
             'App\\Controller\\RegistrationController:register' => '?',
             'App\\Controller\\SecurityController:login' => '?',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.WRJPrYR' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_WRJPrYRService()
+    {
+        return $this->privates['.service_locator.WRJPrYR'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'categorieRepository' => ['privates', 'App\\Repository\\CategorieRepository', 'getCategorieRepositoryService', false],
+        ], [
+            'categorieRepository' => 'App\\Repository\\CategorieRepository',
         ]);
     }
 
@@ -2609,7 +2649,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.Uwb9bT5'] ?? $this->get_ServiceLocator_Uwb9bT5Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.SFTGKLC'] ?? $this->get_ServiceLocator_SFTGKLCService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -2651,7 +2691,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.Uwb9bT5'] ?? $this->get_ServiceLocator_Uwb9bT5Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.SFTGKLC'] ?? $this->get_ServiceLocator_SFTGKLCService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**

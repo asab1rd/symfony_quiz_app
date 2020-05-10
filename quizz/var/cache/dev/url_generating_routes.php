@@ -16,6 +16,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], []],
+    'active' => [['id'], ['_controller' => 'App\\Controller\\MainController::activation'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activation']], [], []],
     'quiz' => [[], ['_controller' => 'App\\Controller\\QuizController::index'], [], [['text', '/quiz']], [], []],
     'quiz_show_categories' => [[], ['_controller' => 'App\\Controller\\QuizController::showCategories'], [], [['text', '/categories']], [], []],
     'quiz_show_quizes' => [['id', 'qst'], ['_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id' => '\\d+', 'qst' => '\\d+'], [['variable', '/', '\\d+', 'qst', true], ['variable', '/', '\\d+', 'id', true], ['text', '/category']], [], []],

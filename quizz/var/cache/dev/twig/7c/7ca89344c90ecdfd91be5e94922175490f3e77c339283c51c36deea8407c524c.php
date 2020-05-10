@@ -58,16 +58,18 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
         // line 7
         echo "    <link
       rel=\"stylesheet\"
-      href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css.css\"
+      href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"
+      integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\"
+      crossorigin=\"anonymous\"
     />
   </head>
   <body>
     ";
-        // line 13
+        // line 15
         $this->displayBlock('body', $context, $blocks);
         echo " ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 14
+        // line 16
         echo "  </body>
 </html>
 ";
@@ -116,7 +118,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     }
 
-    // line 13
+    // line 15
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -158,7 +160,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     public function getDebugInfo()
     {
-        return array (  120 => 13,  102 => 6,  83 => 5,  71 => 14,  67 => 13,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  122 => 15,  104 => 6,  85 => 5,  73 => 16,  69 => 15,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +173,9 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
     {% block stylesheets %}{% endblock %}
     <link
       rel=\"stylesheet\"
-      href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css.css\"
+      href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"
+      integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\"
+      crossorigin=\"anonymous\"
     />
   </head>
   <body>

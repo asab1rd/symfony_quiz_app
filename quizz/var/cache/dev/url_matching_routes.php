@@ -37,8 +37,9 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/category/(\\d+)/(\\d+)(*:190)'
-                .'|/quiz/(\\d+)(*:209)'
+                .'|/activation/([^/]++)(*:189)'
+                .'|/category/(\\d+)/(\\d+)(*:218)'
+                .'|/quiz/(\\d+)(*:237)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -49,8 +50,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        190 => [[['_route' => 'quiz_show_quizes', '_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id', 'qst'], null, null, false, true, null]],
-        209 => [
+        189 => [[['_route' => 'active', '_controller' => 'App\\Controller\\MainController::activation'], ['id'], null, null, false, true, null]],
+        218 => [[['_route' => 'quiz_show_quizes', '_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id', 'qst'], null, null, false, true, null]],
+        237 => [
             [['_route' => 'quiz_play', '_controller' => 'App\\Controller\\QuizController::play'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

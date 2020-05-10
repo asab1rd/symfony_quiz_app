@@ -8,7 +8,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/category/{id}',
+                '/category/{id}/{qst}',
             ],
             'name' => [
                 'quiz_show_quizes',
@@ -16,6 +16,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'requirements' => [
                 [
                     'id' => '\\d+',
+                    'qst' => '\\d+',
                 ],
             ],
         ],

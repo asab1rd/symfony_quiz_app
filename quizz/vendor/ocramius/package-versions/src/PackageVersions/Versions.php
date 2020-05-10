@@ -14,7 +14,7 @@ use OutOfBoundsException;
  */
 final class Versions
 {
-    public const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    public const ROOT_PACKAGE_NAME = '__root__';
     /**
      * Array of all available composer packages.
      * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
@@ -114,6 +114,7 @@ final class Versions
   'symfony/var-dumper' => 'v5.0.8@09de28632f16f81058a85fcf318397218272a07b',
   'symfony/var-exporter' => 'v5.0.8@5d18811da9e1ae2bb86b0a97fb2d784e27ffd59f',
   'symfony/web-link' => 'v5.0.8@b62309b9f69ae6a8eb3cbd39241a5688bc5f1228',
+  'symfony/webpack-encore-bundle' => 'v1.7.3@5c0f659eceae87271cce54bbdfb05ed8ec9007bd',
   'symfony/yaml' => 'v5.0.8@482fb4e710e5af3e0e78015f19aa716ad953392f',
   'twig/extra-bundle' => 'v3.0.3@6eaf1637abe6b68518e7e0949ebb84e55770d5c6',
   'twig/twig' => 'v3.0.3@3b88ccd180a6b61ebb517aea3b1a8906762a1dc2',
@@ -130,14 +131,14 @@ final class Versions
   'symfony/profiler-pack' => 'v1.0.4@99c4370632c2a59bb0444852f92140074ef02209',
   'symfony/test-pack' => 'v1.0.6@ff87e800a67d06c423389f77b8209bc9dc469def',
   'symfony/web-profiler-bundle' => 'v5.0.8@67fc2302ba7ca3d917decea6d3accdbd055398d1',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v5.0.99@',
+  'paragonie/random_compat' => '2.*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-ctype' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-iconv' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-php72' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-php71' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-php70' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  'symfony/polyfill-php56' => '*@1d243f669600b7f18488936c23b1f3442166fa87',
+  '__root__' => 'dev-quiz@1d243f669600b7f18488936c23b1f3442166fa87',
 );
 
     private function __construct()

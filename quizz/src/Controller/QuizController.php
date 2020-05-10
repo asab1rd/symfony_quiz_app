@@ -30,23 +30,27 @@ class QuizController extends AbstractController
         ]);
     }
     /**
-     * @Route("/category/{id}", name="quiz_show_quizes",  requirements={"id"="\d+"})
+     * @Route("/category/{id}/{qst}", name="quiz_show_quizes",  requirements={"id"="\d+","qst"="\d+"})
      */
-    public function showQuizzesByCategory(int $id, CategorieRepository $categorieRepository)
+    public function showQuizzesByCategory(int $id, int $qst, CategorieRepository $categorieRepository)
     {
+        $reponses = [""];
         if ($category = $categorieRepository->find($id)) {
             $questions = $category->getQuestions();
-            // dd($questions);
-            return $this->render('quiz/quizzes.html.twig', [
-                'questions' => $questions,
-            ]);
+            if ($questions->containsKey($qst - 1)) {
+                $nextQst = $qst + 1;
+                return $this->render('quiz/quizzes.html.twig', [
+                    'question' => $questions->get($qst - 1),
+                    "nextRoute" => "/category/$id/$nextQst"
+                ]);
+            }
         }
     }
 
     /**
      * @Route("/quiz/{id}", name="quiz_play",  requirements={"id"="\d+"})
      */
-    public function play($id){
-
+    public function play($id)
+    {
     }
 }

@@ -63,20 +63,39 @@ class __TwigTemplate_11728dc6dc7a3374def1be5439b4d07e5ab4a6cdc15acfd1717a069edab
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        echo " ";
+        // line 2
+        echo "<h3>";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 2, $this->source); })()), "question", [], "any", false, false, false, 2), "html", null, true);
+        echo "</h3>
+<form action=\"";
+        // line 3
+        echo twig_escape_filter($this->env, (isset($context["nextRoute"]) || array_key_exists("nextRoute", $context) ? $context["nextRoute"] : (function () { throw new RuntimeError('Variable "nextRoute" does not exist.', 3, $this->source); })()), "html", null, true);
+        echo "\" method=\"get\">
+  ";
+        // line 4
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["questions"]) || array_key_exists("questions", $context) ? $context["questions"] : (function () { throw new RuntimeError('Variable "questions" does not exist.', 1, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["question"]) {
-            // line 2
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["question"], "question", [], "any", false, false, false, 2), "html", null, true);
-            echo "
-";
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 4, $this->source); })()), "reponses", [], "any", false, false, false, 4));
+        foreach ($context['_seq'] as $context["_key"] => $context["reponse"]) {
+            // line 5
+            echo "  <div class=\"reponse\">
+    <label for=\"reponse\">";
+            // line 6
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "reponse", [], "any", false, false, false, 6), "html", null, true);
+            echo "</label>
+    <input type=\"radio\" name=\"reponse\" value=\"";
+            // line 7
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "reponse", [], "any", false, false, false, 7), "html", null, true);
+            echo "\" />
+  </div>
+  ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['question'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reponse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 3
-        echo " ";
+        // line 10
+        echo "  <input type=\"submit\" value=\"\" />
+</form>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -97,14 +116,23 @@ class __TwigTemplate_11728dc6dc7a3374def1be5439b4d07e5ab4a6cdc15acfd1717a069edab
 
     public function getDebugInfo()
     {
-        return array (  79 => 3,  71 => 2,  35 => 1,);
+        return array (  96 => 10,  87 => 7,  83 => 6,  80 => 5,  76 => 4,  72 => 3,  67 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %} {% block body %} {% for question in questions %}
-{{ question.question }}
-{% endfor %} {% endblock %}
+        return new Source("{% extends 'base.html.twig' %} {% block body %}
+<h3>{{ question.question }}</h3>
+<form action=\"{{ nextRoute }}\" method=\"get\">
+  {% for reponse in question.reponses %}
+  <div class=\"reponse\">
+    <label for=\"reponse\">{{ reponse.reponse }}</label>
+    <input type=\"radio\" name=\"reponse\" value=\"{{ reponse.reponse }}\" />
+  </div>
+  {% endfor %}
+  <input type=\"submit\" value=\"\" />
+</form>
+{% endblock %}
 ", "quiz/quizzes.html.twig", "/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/quizzes.html.twig");
     }
 }

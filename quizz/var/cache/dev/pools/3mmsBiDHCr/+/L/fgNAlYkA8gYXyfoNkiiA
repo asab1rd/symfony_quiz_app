@@ -8,14 +8,14 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/quiz/{id}',
+                '/game/{categoryId}',
             ],
             'name' => [
                 'quiz_play',
             ],
-            'requirements' => [
+            'methods' => [
                 [
-                    'id' => '\\d+',
+                    'GET|POST',
                 ],
             ],
         ],

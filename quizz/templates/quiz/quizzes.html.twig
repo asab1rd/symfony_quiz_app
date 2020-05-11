@@ -1,12 +1,33 @@
 {% extends 'base.html.twig' %} {% block body %}
-<h3>{{ question.question }}</h3>
-<form action="{{ nextRoute }}" method="get">
-  {% for reponse in question.reponses %}
-  <div class="reponse">
-    <label for="reponse">{{ reponse.reponse }}</label>
-    <input type="radio" name="reponse" value="{{ reponse.reponse }}" />
+<div class="container">
+  <div class="row justify-content-around mt-5">
+    <div class="row flex-column">
+      <h3 class="question">{{ question.question }}</h3>
+      <form class="reponse-form" action="{{ nextRoute }}" method="post">
+        {% for reponse in question.reponses %}
+        <div class="form-check reponse">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="reponse_id"
+            value="{{ reponse.id }}"
+            id="reponse{{ reponse.id }}"
+          />
+          <label class="form-check-label" for="reponse">{{
+            reponse.reponse
+          }}</label>
+        </div>
+        {#
+        <div class="reponse">
+          <label for="reponse">{{ reponse.reponse }}</label>
+          <input type="radio" name="reponse_id" value="{{ reponse.id }}" />
+        </div>
+        #} {% endfor %}
+        <button type="submit" class="btn btn-dark btn-sm btn-rounded mt-5">
+          Submit Response
+        </button>
+      </form>
+    </div>
   </div>
-  {% endfor %}
-  <input type="submit" value="" />
-</form>
+</div>
 {% endblock %}

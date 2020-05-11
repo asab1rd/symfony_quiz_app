@@ -55,21 +55,37 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
     ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "    <link
+        echo " ";
+        // line 14
+        echo "    <!-- Font Awesome -->
+    <link
       rel=\"stylesheet\"
-      href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"
-      integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\"
-      crossorigin=\"anonymous\"
+      href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"
     />
+    <!-- Google Fonts -->
+    <link
+      rel=\"stylesheet\"
+      href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css\"
+      rel=\"stylesheet\"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css\"
+      rel=\"stylesheet\"
+    />
+    <link rel=\"stylesheet\" href=\"/main.css\" />
   </head>
   <body>
     ";
-        // line 15
+        // line 37
         $this->displayBlock('body', $context, $blocks);
         echo " ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 16
+        // line 38
         echo "  </body>
 </html>
 ";
@@ -118,7 +134,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     }
 
-    // line 15
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -160,7 +176,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     public function getDebugInfo()
     {
-        return array (  122 => 15,  104 => 6,  85 => 5,  73 => 16,  69 => 15,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  138 => 37,  120 => 6,  101 => 5,  89 => 38,  85 => 37,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -170,13 +186,35 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
   <head>
     <meta charset=\"UTF-8\" />
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}{% endblock %} {#
     <link
       rel=\"stylesheet\"
       href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"
       integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\"
       crossorigin=\"anonymous\"
     />
+    #}
+    <!-- Font Awesome -->
+    <link
+      rel=\"stylesheet\"
+      href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel=\"stylesheet\"
+      href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css\"
+      rel=\"stylesheet\"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css\"
+      rel=\"stylesheet\"
+    />
+    <link rel=\"stylesheet\" href=\"/main.css\" />
   </head>
   <body>
     {% block body %}{% endblock %} {% block javascripts %}{% endblock %}

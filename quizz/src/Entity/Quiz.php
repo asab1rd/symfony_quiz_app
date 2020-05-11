@@ -42,7 +42,12 @@ class Quiz
     /**
      * @ORM\Column(type="integer")
      */
-    private $current_question;
+    private $current_question = 0;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $finished;
 
     public function getId(): ?int
     {
@@ -105,6 +110,18 @@ class Quiz
     public function setCurrentQuestion(int $current_question): self
     {
         $this->current_question = $current_question;
+
+        return $this;
+    }
+
+    public function getFinished(): ?bool
+    {
+        return $this->finished;
+    }
+
+    public function setFinished(bool $finished): self
+    {
+        $this->finished = $finished;
 
         return $this;
     }

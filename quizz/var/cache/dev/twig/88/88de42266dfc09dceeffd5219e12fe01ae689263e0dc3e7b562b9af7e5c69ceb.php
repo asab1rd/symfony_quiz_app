@@ -64,37 +64,59 @@ class __TwigTemplate_42da679c96f24b9b4ace319e9addfe70a7823d22aff6af4aea01fb71205
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 2
-        echo "<h3>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 2, $this->source); })()), "question", [], "any", false, false, false, 2), "html", null, true);
+        echo "<div class=\"container\">
+  <div class=\"row justify-content-around mt-5\">
+    <div class=\"row flex-column\">
+      <h3 class=\"question\">";
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 5, $this->source); })()), "question", [], "any", false, false, false, 5), "html", null, true);
         echo "</h3>
-<form action=\"";
-        // line 3
-        echo twig_escape_filter($this->env, (isset($context["nextRoute"]) || array_key_exists("nextRoute", $context) ? $context["nextRoute"] : (function () { throw new RuntimeError('Variable "nextRoute" does not exist.', 3, $this->source); })()), "html", null, true);
-        echo "\" method=\"get\">
-  ";
-        // line 4
+      <form class=\"reponse-form\" action=\"";
+        // line 6
+        echo twig_escape_filter($this->env, (isset($context["nextRoute"]) || array_key_exists("nextRoute", $context) ? $context["nextRoute"] : (function () { throw new RuntimeError('Variable "nextRoute" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo "\" method=\"post\">
+        ";
+        // line 7
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 4, $this->source); })()), "reponses", [], "any", false, false, false, 4));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 7, $this->source); })()), "reponses", [], "any", false, false, false, 7));
         foreach ($context['_seq'] as $context["_key"] => $context["reponse"]) {
-            // line 5
-            echo "  <div class=\"reponse\">
-    <label for=\"reponse\">";
-            // line 6
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "reponse", [], "any", false, false, false, 6), "html", null, true);
+            // line 8
+            echo "        <div class=\"form-check reponse\">
+          <input
+            type=\"radio\"
+            class=\"form-check-input\"
+            name=\"reponse_id\"
+            value=\"";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 13), "html", null, true);
+            echo "\"
+            id=\"reponse";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "id", [], "any", false, false, false, 14), "html", null, true);
+            echo "\"
+          />
+          <label class=\"form-check-label\" for=\"reponse\">";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source,             // line 17
+$context["reponse"], "reponse", [], "any", false, false, false, 17), "html", null, true);
+            // line 18
             echo "</label>
-    <input type=\"radio\" name=\"reponse\" value=\"";
-            // line 7
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reponse"], "reponse", [], "any", false, false, false, 7), "html", null, true);
-            echo "\" />
-  </div>
-  ";
+        </div>
+        ";
+            // line 25
+            echo " ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reponse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 10
-        echo "  <input type=\"submit\" value=\"\" />
-</form>
+        // line 26
+        echo "        <button type=\"submit\" class=\"btn btn-dark btn-sm btn-rounded mt-5\">
+          Submit Response
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -116,22 +138,43 @@ class __TwigTemplate_42da679c96f24b9b4ace319e9addfe70a7823d22aff6af4aea01fb71205
 
     public function getDebugInfo()
     {
-        return array (  96 => 10,  87 => 7,  83 => 6,  80 => 5,  76 => 4,  72 => 3,  67 => 2,  35 => 1,);
+        return array (  113 => 26,  107 => 25,  103 => 18,  101 => 17,  100 => 16,  95 => 14,  91 => 13,  84 => 8,  80 => 7,  76 => 6,  72 => 5,  67 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %} {% block body %}
-<h3>{{ question.question }}</h3>
-<form action=\"{{ nextRoute }}\" method=\"get\">
-  {% for reponse in question.reponses %}
-  <div class=\"reponse\">
-    <label for=\"reponse\">{{ reponse.reponse }}</label>
-    <input type=\"radio\" name=\"reponse\" value=\"{{ reponse.reponse }}\" />
+<div class=\"container\">
+  <div class=\"row justify-content-around mt-5\">
+    <div class=\"row flex-column\">
+      <h3 class=\"question\">{{ question.question }}</h3>
+      <form class=\"reponse-form\" action=\"{{ nextRoute }}\" method=\"post\">
+        {% for reponse in question.reponses %}
+        <div class=\"form-check reponse\">
+          <input
+            type=\"radio\"
+            class=\"form-check-input\"
+            name=\"reponse_id\"
+            value=\"{{ reponse.id }}\"
+            id=\"reponse{{ reponse.id }}\"
+          />
+          <label class=\"form-check-label\" for=\"reponse\">{{
+            reponse.reponse
+          }}</label>
+        </div>
+        {#
+        <div class=\"reponse\">
+          <label for=\"reponse\">{{ reponse.reponse }}</label>
+          <input type=\"radio\" name=\"reponse_id\" value=\"{{ reponse.id }}\" />
+        </div>
+        #} {% endfor %}
+        <button type=\"submit\" class=\"btn btn-dark btn-sm btn-rounded mt-5\">
+          Submit Response
+        </button>
+      </form>
+    </div>
   </div>
-  {% endfor %}
-  <input type=\"submit\" value=\"\" />
-</form>
+</div>
 {% endblock %}
 ", "quiz/quizzes.html.twig", "/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/quizzes.html.twig");
     }

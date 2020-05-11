@@ -55,7 +55,6 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
 
     }
 
-    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +73,7 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
 
     }
 
-    // line 5
+    // line 2
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,29 +83,15 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
+        // line 3
+        echo "
 <div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/artkodes/Projects/MVC_My_Quiz/quizz/src/Controller/QuizController.php", 0), "html", null, true);
-        echo "\">src/Controller/QuizController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/index.html.twig", 0), "html", null, true);
-        echo "\">templates/quiz/index.html.twig</a></code></li>
-    </ul>
+  <p class=\"container\">
+    ";
+        // line 6
+        echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo "
+  </p>
 </div>
 ";
         
@@ -129,29 +114,18 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  92 => 6,  87 => 3,  77 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
-
-{% block title %}Hello QuizController!{% endblock %}
-
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        return new Source("{% extends 'base.html.twig' %} {% block title %}Hello QuizController!{% endblock
+%} {% block body %}
 
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/src/Controller/QuizController.php'|file_link(0) }}\">src/Controller/QuizController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/index.html.twig'|file_link(0) }}\">templates/quiz/index.html.twig</a></code></li>
-    </ul>
+  <p class=\"container\">
+    {{ message }}
+  </p>
 </div>
 {% endblock %}
 ", "quiz/index.html.twig", "/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/index.html.twig");

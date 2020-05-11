@@ -16,6 +16,7 @@ return [
         '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/quiz' => [[['_route' => 'quiz', '_controller' => 'App\\Controller\\QuizController::index'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'quiz_show_categories', '_controller' => 'App\\Controller\\QuizController::showCategories'], null, null, null, false, false, null]],
+        '/test/user' => [[['_route' => 'quiz_test', '_controller' => 'App\\Controller\\QuizController::test'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -38,8 +39,10 @@ return [
                     .')'
                 .')'
                 .'|/activation/([^/]++)(*:189)'
-                .'|/category/(\\d+)/(\\d+)(*:218)'
-                .'|/quiz/(\\d+)(*:237)'
+                .'|/game/(?'
+                    .'|(\\d+)/(\\d+)(*:217)'
+                    .'|([^/]++)(*:233)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -51,9 +54,9 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         189 => [[['_route' => 'active', '_controller' => 'App\\Controller\\MainController::activation'], ['id'], null, null, false, true, null]],
-        218 => [[['_route' => 'quiz_show_quizes', '_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id', 'qst'], null, null, false, true, null]],
-        237 => [
-            [['_route' => 'quiz_play', '_controller' => 'App\\Controller\\QuizController::play'], ['id'], null, null, false, true, null],
+        217 => [[['_route' => 'quiz_show_quizes', '_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id', 'qst'], null, null, false, true, null]],
+        233 => [
+            [['_route' => 'quiz_play', '_controller' => 'App\\Controller\\QuizController::play'], ['categoryId'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

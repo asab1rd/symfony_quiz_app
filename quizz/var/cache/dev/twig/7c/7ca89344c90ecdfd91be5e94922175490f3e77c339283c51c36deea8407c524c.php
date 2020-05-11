@@ -80,12 +80,91 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
     <link rel=\"stylesheet\" href=\"/main.css\" />
   </head>
   <body>
+    <div class=\"container-fluid m-0 p-0\">
+      <!--Navbar-->
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        <!-- Navbar brand -->
+        <a class=\"navbar-brand\" href=\"#\">Tha QUIZ</a>
+
+        <!-- Collapse button -->
+
+        <!-- Collapsible content -->
+        <div class=\"collapse navbar-collapse\" id=\"basicExampleNav\">
+          <!-- Links -->
+          <ul class=\"navbar-nav d-flex justify-content-between w-100 ml-2\">
+            <div class=\"d-flex\">
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Home </a>
+              </li>
+              ";
+        // line 53
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 54
+            echo "              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">My Account</a>
+              </li>
+              ";
+        }
+        // line 58
+        echo "            </div>
+            ";
+        // line 59
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 60
+            echo "            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"";
+            // line 61
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">LOGOUT</a>
+            </li>
+            ";
+        } else {
+            // line 64
+            echo "            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"";
+            // line 65
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">LOGIN</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"";
+            // line 68
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">REGISTER</a>
+            </li>
+            ";
+        }
+        // line 71
+        echo "          </ul>
+
+          ";
+        // line 73
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 74
+            echo "          <form class=\"form-inline\">
+            <div class=\"md-form my-0\">
+              <input
+                class=\"form-control mr-sm-2\"
+                type=\"text\"
+                placeholder=\"Search\"
+                aria-label=\"Search\"
+              />
+            </div>
+          </form>
+          ";
+        }
+        // line 85
+        echo "        </div>
+        <!-- Collapsible content -->
+      </nav>
+    </div>
+    <!--/.Navbar-->
     ";
-        // line 37
+        // line 90
         $this->displayBlock('body', $context, $blocks);
         echo " ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 38
+        // line 91
         echo "  </body>
 </html>
 ";
@@ -134,7 +213,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     }
 
-    // line 37
+    // line 90
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -174,9 +253,14 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  138 => 37,  120 => 6,  101 => 5,  89 => 38,  85 => 37,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  217 => 90,  199 => 6,  180 => 5,  168 => 91,  164 => 90,  157 => 85,  144 => 74,  142 => 73,  138 => 71,  132 => 68,  126 => 65,  123 => 64,  117 => 61,  114 => 60,  112 => 59,  109 => 58,  103 => 54,  101 => 53,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -217,6 +301,59 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
     <link rel=\"stylesheet\" href=\"/main.css\" />
   </head>
   <body>
+    <div class=\"container-fluid m-0 p-0\">
+      <!--Navbar-->
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        <!-- Navbar brand -->
+        <a class=\"navbar-brand\" href=\"#\">Tha QUIZ</a>
+
+        <!-- Collapse button -->
+
+        <!-- Collapsible content -->
+        <div class=\"collapse navbar-collapse\" id=\"basicExampleNav\">
+          <!-- Links -->
+          <ul class=\"navbar-nav d-flex justify-content-between w-100 ml-2\">
+            <div class=\"d-flex\">
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Home </a>
+              </li>
+              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">My Account</a>
+              </li>
+              {% endif %}
+            </div>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"{{ path(\"app_logout\") }}\">LOGOUT</a>
+            </li>
+            {% else %}
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"{{ path(\"app_login\") }}\">LOGIN</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"{{ path(\"app_register\") }}\">REGISTER</a>
+            </li>
+            {% endif %}
+          </ul>
+
+          {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+          <form class=\"form-inline\">
+            <div class=\"md-form my-0\">
+              <input
+                class=\"form-control mr-sm-2\"
+                type=\"text\"
+                placeholder=\"Search\"
+                aria-label=\"Search\"
+              />
+            </div>
+          </form>
+          {% endif %}
+        </div>
+        <!-- Collapsible content -->
+      </nav>
+    </div>
+    <!--/.Navbar-->
     {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
   </body>
 </html>

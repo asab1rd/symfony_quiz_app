@@ -15,7 +15,7 @@ class MainController extends AbstractController
      */
     public function index(CategorieRepository $categorieRepository)
     {
-        $user = $this->get('security.authorization_checker')->isGranted("ROLE_ADMIN");
+        $user = $this->get('security.token_storage')->getToken();
         dd($user);
         $categories = $categorieRepository->findAll();
         // dd($categories);

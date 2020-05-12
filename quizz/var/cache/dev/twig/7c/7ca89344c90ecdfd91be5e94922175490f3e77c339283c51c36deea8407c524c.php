@@ -84,7 +84,10 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
       <!--Navbar-->
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <!-- Navbar brand -->
-        <a class=\"navbar-brand\" href=\"#\">Tha QUIZ</a>
+        <a class=\"navbar-brand\" href=\"";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">Tha QUIZ</a>
 
         <!-- Collapse button -->
 
@@ -94,7 +97,10 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
           <ul class=\"navbar-nav d-flex justify-content-between w-100 ml-2\">
             <div class=\"d-flex\">
               <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Home </a>
+                <a class=\"nav-link\" href=\"";
+        // line 51
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">Home </a>
               </li>
               ";
         // line 53
@@ -260,7 +266,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     public function getDebugInfo()
     {
-        return array (  217 => 90,  199 => 6,  180 => 5,  168 => 91,  164 => 90,  157 => 85,  144 => 74,  142 => 73,  138 => 71,  132 => 68,  126 => 65,  123 => 64,  117 => 61,  114 => 60,  112 => 59,  109 => 58,  103 => 54,  101 => 53,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  223 => 90,  205 => 6,  186 => 5,  174 => 91,  170 => 90,  163 => 85,  150 => 74,  148 => 73,  144 => 71,  138 => 68,  132 => 65,  129 => 64,  123 => 61,  120 => 60,  118 => 59,  115 => 58,  109 => 54,  107 => 53,  102 => 51,  89 => 41,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -305,7 +311,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
       <!--Navbar-->
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <!-- Navbar brand -->
-        <a class=\"navbar-brand\" href=\"#\">Tha QUIZ</a>
+        <a class=\"navbar-brand\" href=\"{{ path(\"app_home\") }}\">Tha QUIZ</a>
 
         <!-- Collapse button -->
 
@@ -315,7 +321,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
           <ul class=\"navbar-nav d-flex justify-content-between w-100 ml-2\">
             <div class=\"d-flex\">
               <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Home </a>
+                <a class=\"nav-link\" href=\"{{ path(\"app_home\") }}\">Home </a>
               </li>
               {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
               <li class=\"nav-item\">

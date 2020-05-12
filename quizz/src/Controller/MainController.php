@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CategorieRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +13,12 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index()
+    public function index(CategorieRepository $categorieRepository)
     {
+        $categories = $categorieRepository->findAll();
+        // dd($categories);
         return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
+            'categories' => $categories,
         ]);
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerWWoKDDz;
+namespace ContainerGKc8S3Y;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1748,6 +1748,50 @@ class App_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private '.service_locator.WaqXuql' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_WaqXuqlService()
+    {
+        return $this->privates['.service_locator.WaqXuql'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Controller\\MainController::activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
+            'App\\Controller\\MainController::index' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
+            'App\\Controller\\QuizController::showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
+            'App\\Controller\\RegistrationController::register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
+            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
+            'App\\Controller\\MainController:activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
+            'App\\Controller\\MainController:index' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
+            'App\\Controller\\QuizController:showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
+            'App\\Controller\\RegistrationController:register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
+            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
+        ], [
+            'App\\Controller\\MainController::activation' => '?',
+            'App\\Controller\\MainController::index' => '?',
+            'App\\Controller\\QuizController::play' => '?',
+            'App\\Controller\\QuizController::showCategories' => '?',
+            'App\\Controller\\QuizController::showQuizzesByCategory' => '?',
+            'App\\Controller\\QuizController::test' => '?',
+            'App\\Controller\\RegistrationController::register' => '?',
+            'App\\Controller\\SecurityController::login' => '?',
+            'App\\Controller\\MainController:activation' => '?',
+            'App\\Controller\\MainController:index' => '?',
+            'App\\Controller\\QuizController:play' => '?',
+            'App\\Controller\\QuizController:showCategories' => '?',
+            'App\\Controller\\QuizController:showQuizzesByCategory' => '?',
+            'App\\Controller\\QuizController:test' => '?',
+            'App\\Controller\\RegistrationController:register' => '?',
+            'App\\Controller\\SecurityController:login' => '?',
+        ]);
+    }
+
+    /**
      * Gets the private '.service_locator.flKhx93' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
@@ -1828,46 +1872,6 @@ class App_KernelDevDebugContainer extends Container
             'authenticationUtils' => ['services', 'security.authentication_utils', 'getSecurity_AuthenticationUtilsService', false],
         ], [
             'authenticationUtils' => '?',
-        ]);
-    }
-
-    /**
-     * Gets the private '.service_locator.wbrNUIU' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_WbrNUIUService()
-    {
-        return $this->privates['.service_locator.wbrNUIU'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'App\\Controller\\MainController::activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
-            'App\\Controller\\QuizController::play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
-            'App\\Controller\\QuizController::showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController::showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController::test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
-            'App\\Controller\\RegistrationController::register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
-            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
-            'App\\Controller\\MainController:activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
-            'App\\Controller\\QuizController:play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
-            'App\\Controller\\QuizController:showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController:showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController:test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
-            'App\\Controller\\RegistrationController:register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
-            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
-        ], [
-            'App\\Controller\\MainController::activation' => '?',
-            'App\\Controller\\QuizController::play' => '?',
-            'App\\Controller\\QuizController::showCategories' => '?',
-            'App\\Controller\\QuizController::showQuizzesByCategory' => '?',
-            'App\\Controller\\QuizController::test' => '?',
-            'App\\Controller\\RegistrationController::register' => '?',
-            'App\\Controller\\SecurityController::login' => '?',
-            'App\\Controller\\MainController:activation' => '?',
-            'App\\Controller\\QuizController:play' => '?',
-            'App\\Controller\\QuizController:showCategories' => '?',
-            'App\\Controller\\QuizController:showQuizzesByCategory' => '?',
-            'App\\Controller\\QuizController:test' => '?',
-            'App\\Controller\\RegistrationController:register' => '?',
-            'App\\Controller\\SecurityController:login' => '?',
         ]);
     }
 
@@ -2771,7 +2775,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.wbrNUIU'] ?? $this->get_ServiceLocator_WbrNUIUService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.WaqXuql'] ?? $this->get_ServiceLocator_WaqXuqlService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -2813,7 +2817,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.wbrNUIU'] ?? $this->get_ServiceLocator_WbrNUIUService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.WaqXuql'] ?? $this->get_ServiceLocator_WaqXuqlService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -4670,7 +4674,7 @@ class App_KernelDevDebugContainer extends Container
 
         $this->privates['security.authentication.guard_handler'] = $instance = new \Symfony\Component\Security\Guard\GuardAuthenticatorHandler(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), []);
 
-        $instance->setSessionAuthenticationStrategy(new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'));
+        $instance->setSessionAuthenticationStrategy(($this->privates['security.authentication.session_strategy'] ?? ($this->privates['security.authentication.session_strategy'] = new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'))));
 
         return $instance;
     }
@@ -4686,6 +4690,36 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AnonymousAuthenticationListener.php';
 
         return $this->privates['security.authentication.listener.anonymous.main'] = new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener(($this->privates['security.untracked_token_storage'] ?? ($this->privates['security.untracked_token_storage'] = new \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage())), $this->getParameter('container.build_hash'), ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()));
+    }
+
+    /**
+     * Gets the private 'security.authentication.listener.form.main' shared service.
+     *
+     * @return \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener
+     */
+    protected function getSecurity_Authentication_Listener_Form_MainService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AbstractListener.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AbstractAuthenticationListener.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/UsernamePasswordFormAuthenticationListener.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Authentication/AuthenticationSuccessHandlerInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Util/TargetPathTrait.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Authentication/DefaultAuthenticationSuccessHandler.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Authentication/AuthenticationFailureHandlerInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Authentication/DefaultAuthenticationFailureHandler.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Session/SessionAuthenticationStrategyInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Session/SessionAuthenticationStrategy.php';
+
+        $a = ($this->privates['security.http_utils'] ?? $this->getSecurity_HttpUtilsService());
+        $b = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($a, []);
+        $b->setOptions(['default_target_path' => 'app_home', 'always_use_default_target_path' => true, 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false]);
+        $b->setProviderKey('main');
+        $c = ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService());
+
+        $d = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler(($this->services['http_kernel'] ?? $this->getHttpKernelService()), $a, [], $c);
+        $d->setOptions(['login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path']);
+
+        return $this->privates['security.authentication.listener.form.main'] = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()), ($this->privates['security.authentication.session_strategy'] ?? ($this->privates['security.authentication.session_strategy'] = new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'))), $a, 'main', $b, $d, ['check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true], $c, ($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), NULL);
     }
 
     /**
@@ -4712,12 +4746,29 @@ class App_KernelDevDebugContainer extends Container
     {
         $this->privates['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(new RewindableGenerator(function () {
             yield 0 => ($this->privates['security.authentication.provider.guard.main'] ?? $this->getSecurity_Authentication_Provider_Guard_MainService());
-            yield 1 => ($this->privates['security.authentication.provider.anonymous.main'] ?? ($this->privates['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider($this->getParameter('container.build_hash'))));
-        }, 2), true);
+            yield 1 => ($this->privates['security.authentication.provider.dao.main'] ?? $this->getSecurity_Authentication_Provider_Dao_MainService());
+            yield 2 => ($this->privates['security.authentication.provider.anonymous.main'] ?? ($this->privates['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider($this->getParameter('container.build_hash'))));
+        }, 3), true);
 
         $instance->setEventDispatcher(($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()));
 
         return $instance;
+    }
+
+    /**
+     * Gets the private 'security.authentication.provider.dao.main' shared service.
+     *
+     * @return \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider
+     */
+    protected function getSecurity_Authentication_Provider_Dao_MainService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-core/Authentication/Provider/AuthenticationProviderInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-core/Authentication/Provider/UserAuthenticationProvider.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-core/Authentication/Provider/DaoAuthenticationProvider.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-core/User/UserCheckerInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-core/User/UserChecker.php';
+
+        return $this->privates['security.authentication.provider.dao.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(($this->privates['security.user.provider.concrete.app_user_provider'] ?? $this->getSecurity_User_Provider_Concrete_AppUserProviderService()), ($this->privates['security.user_checker'] ?? ($this->privates['security.user_checker'] = new \Symfony\Component\Security\Core\User\UserChecker())), 'main', ($this->privates['security.encoder_factory.generic'] ?? $this->getSecurity_EncoderFactory_GenericService()), true);
     }
 
     /**
@@ -4734,7 +4785,7 @@ class App_KernelDevDebugContainer extends Container
 
         return $this->privates['security.authentication.provider.guard.main'] = new \Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider(new RewindableGenerator(function () {
             yield 0 => ($this->privates['App\\Security\\UserAuthenticator'] ?? $this->getUserAuthenticatorService());
-        }, 1), ($this->privates['security.user.provider.concrete.app_user_provider'] ?? $this->getSecurity_User_Provider_Concrete_AppUserProviderService()), 'main', new \Symfony\Component\Security\Core\User\UserChecker(), ($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService()));
+        }, 1), ($this->privates['security.user.provider.concrete.app_user_provider'] ?? $this->getSecurity_User_Provider_Concrete_AppUserProviderService()), 'main', ($this->privates['security.user_checker'] ?? ($this->privates['security.user_checker'] = new \Symfony\Component\Security\Core\User\UserChecker())), ($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService()));
     }
 
     /**
@@ -4858,7 +4909,8 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-bundle/Security/LazyFirewallContext.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Util/TargetPathTrait.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/ExceptionListener.php';
-        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/HttpUtils.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/AuthenticationEntryPointInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/FormAuthenticationEntryPoint.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AbstractListener.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/LogoutListener.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Logout/LogoutSuccessHandlerInterface.php';
@@ -4869,20 +4921,33 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-bundle/Security/FirewallConfig.php';
 
         $a = ($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService());
-        $b = ($this->services['router'] ?? $this->getRouterService());
-
-        $c = new \Symfony\Component\Security\Http\HttpUtils($b, $b, '{^https?://%s$}i', '{^https://%s$}i');
-        $d = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $c, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($c, '/'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'app_logout']);
-        $d->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(($this->privates['security.csrf.token_storage'] ?? $this->getSecurity_Csrf_TokenStorageService())));
-        $d->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $b = ($this->privates['security.http_utils'] ?? $this->getSecurity_HttpUtilsService());
+        $c = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $b, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($b, 'app_home'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'app_logout']);
+        $c->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(($this->privates['security.csrf.token_storage'] ?? $this->getSecurity_Csrf_TokenStorageService())));
+        $c->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
         return $this->privates['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext(new RewindableGenerator(function () {
             yield 0 => ($this->privates['security.channel_listener'] ?? $this->getSecurity_ChannelListenerService());
             yield 1 => ($this->privates['security.context_listener.0'] ?? $this->getSecurity_ContextListener_0Service());
             yield 2 => ($this->privates['security.authentication.listener.guard.main'] ?? $this->getSecurity_Authentication_Listener_Guard_MainService());
-            yield 3 => ($this->privates['security.authentication.listener.anonymous.main'] ?? $this->getSecurity_Authentication_Listener_Anonymous_MainService());
-            yield 4 => ($this->privates['security.access_listener'] ?? $this->getSecurity_AccessListenerService());
-        }, 5), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, ($this->privates['security.authentication.trust_resolver'] ?? ($this->privates['security.authentication.trust_resolver'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver())), $c, 'main', ($this->privates['App\\Security\\UserAuthenticator'] ?? $this->getUserAuthenticatorService()), NULL, NULL, ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()), false), $d, new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', NULL, true, false, 'security.user.provider.concrete.app_user_provider', 'main', 'App\\Security\\UserAuthenticator', NULL, NULL, [0 => 'guard', 1 => 'anonymous'], NULL), ($this->privates['security.untracked_token_storage'] ?? ($this->privates['security.untracked_token_storage'] = new \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage())));
+            yield 3 => ($this->privates['security.authentication.listener.form.main'] ?? $this->getSecurity_Authentication_Listener_Form_MainService());
+            yield 4 => ($this->privates['security.authentication.listener.anonymous.main'] ?? $this->getSecurity_Authentication_Listener_Anonymous_MainService());
+            yield 5 => ($this->privates['security.access_listener'] ?? $this->getSecurity_AccessListenerService());
+        }, 6), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, ($this->privates['security.authentication.trust_resolver'] ?? ($this->privates['security.authentication.trust_resolver'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver())), $b, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint(($this->services['http_kernel'] ?? $this->getHttpKernelService()), $b, '/login', false), NULL, NULL, ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()), false), $c, new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', NULL, true, false, 'security.user.provider.concrete.app_user_provider', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, [0 => 'guard', 1 => 'form_login', 2 => 'anonymous'], NULL), ($this->privates['security.untracked_token_storage'] ?? ($this->privates['security.untracked_token_storage'] = new \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage())));
+    }
+
+    /**
+     * Gets the private 'security.http_utils' shared service.
+     *
+     * @return \Symfony\Component\Security\Http\HttpUtils
+     */
+    protected function getSecurity_HttpUtilsService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/HttpUtils.php';
+
+        $a = ($this->services['router'] ?? $this->getRouterService());
+
+        return $this->privates['security.http_utils'] = new \Symfony\Component\Security\Http\HttpUtils($a, $a, '{^https?://%s$}i', '{^https://%s$}i');
     }
 
     /**

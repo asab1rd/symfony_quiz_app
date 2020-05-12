@@ -1,20 +1,34 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}Hello MainController!{% endblock
+%} {% block body %}
 
-{% block title %}Hello MainController!{% endblock %}
+<div class="containerr">
+  <div class="row justify-content-around">
+    {% for category in categories %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
+    <!-- Card Dark -->
+    <div class="card w-25 m-1">
+      <!-- Card content -->
+      <div class="card-body elegant-color white-text rounded-bottom">
+        <!-- Title -->
+        <h4 class="card-title">{{ category.name }}</h4>
+        <hr class="hr-light" />
+        <!-- Text -->
+        <p class="card-text white-text mb-4">
+          The category of {{ category.name }} is interesting because it threats,
+          of {{ category.name }}. So if you know enought about
+          {{ category.name }} let's play.
+        </p>
+        <!-- Link -->
+        <a
+          href="game/{{ category.id }}"
+          class="white-text d-flex justify-content-end"
+        >
+          <h5>Play <i class="fas fa-angle-double-right"></i></h5>
+        </a>
+      </div>
+    </div>
+    <!-- Card Dark -->
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

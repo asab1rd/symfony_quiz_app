@@ -55,7 +55,6 @@ class __TwigTemplate_bd9ed3066da94b620ca28d1e57fee6afe8ae4aa64a8ac70affe67823c54
 
     }
 
-    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +73,7 @@ class __TwigTemplate_bd9ed3066da94b620ca28d1e57fee6afe8ae4aa64a8ac70affe67823c54
 
     }
 
-    // line 5
+    // line 2
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,29 +83,62 @@ class __TwigTemplate_bd9ed3066da94b620ca28d1e57fee6afe8ae4aa64a8ac70affe67823c54
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 3
+        echo "
+<div class=\"containerr\">
+  <div class=\"row justify-content-around\">
+    ";
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/artkodes/Projects/MVC_My_Quiz/quizz/src/Controller/MainController.php", 0), "html", null, true);
-        echo "\">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/main/index.html.twig", 0), "html", null, true);
-        echo "\">templates/main/index.html.twig</a></code></li>
-    </ul>
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 6, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 7
+            echo "
+    <!-- Card Dark -->
+    <div class=\"card w-25 m-1\">
+      <!-- Card content -->
+      <div class=\"card-body elegant-color white-text rounded-bottom\">
+        <!-- Title -->
+        <h4 class=\"card-title\">";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 13), "html", null, true);
+            echo "</h4>
+        <hr class=\"hr-light\" />
+        <!-- Text -->
+        <p class=\"card-text white-text mb-4\">
+          The category of ";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 17), "html", null, true);
+            echo " is interesting because it threats,
+          of ";
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 18), "html", null, true);
+            echo ". So if you know enought about
+          ";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 19), "html", null, true);
+            echo " let's play.
+        </p>
+        <!-- Link -->
+        <a
+          href=\"game/";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "\"
+          class=\"white-text d-flex justify-content-end\"
+        >
+          <h5>Play <i class=\"fas fa-angle-double-right\"></i></h5>
+        </a>
+      </div>
+    </div>
+    <!-- Card Dark -->
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 32
+        echo "  </div>
 </div>
 ";
         
@@ -129,29 +161,43 @@ class __TwigTemplate_bd9ed3066da94b620ca28d1e57fee6afe8ae4aa64a8ac70affe67823c54
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  141 => 32,  126 => 23,  119 => 19,  115 => 18,  111 => 17,  104 => 13,  96 => 7,  92 => 6,  87 => 3,  77 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %} {% block title %}Hello MainController!{% endblock
+%} {% block body %}
 
-{% block title %}Hello MainController!{% endblock %}
+<div class=\"containerr\">
+  <div class=\"row justify-content-around\">
+    {% for category in categories %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/src/Controller/MainController.php'|file_link(0) }}\">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/main/index.html.twig'|file_link(0) }}\">templates/main/index.html.twig</a></code></li>
-    </ul>
+    <!-- Card Dark -->
+    <div class=\"card w-25 m-1\">
+      <!-- Card content -->
+      <div class=\"card-body elegant-color white-text rounded-bottom\">
+        <!-- Title -->
+        <h4 class=\"card-title\">{{ category.name }}</h4>
+        <hr class=\"hr-light\" />
+        <!-- Text -->
+        <p class=\"card-text white-text mb-4\">
+          The category of {{ category.name }} is interesting because it threats,
+          of {{ category.name }}. So if you know enought about
+          {{ category.name }} let's play.
+        </p>
+        <!-- Link -->
+        <a
+          href=\"game/{{ category.id }}\"
+          class=\"white-text d-flex justify-content-end\"
+        >
+          <h5>Play <i class=\"fas fa-angle-double-right\"></i></h5>
+        </a>
+      </div>
+    </div>
+    <!-- Card Dark -->
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
 ", "main/index.html.twig", "/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/main/index.html.twig");

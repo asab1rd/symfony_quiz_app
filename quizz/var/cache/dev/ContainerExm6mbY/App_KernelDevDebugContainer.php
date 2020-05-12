@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerW6mPUL7;
+namespace ContainerExm6mbY;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1716,58 +1716,20 @@ class App_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.G3tlGhl' shared service.
+     * Gets the private '.service_locator.FIT_XRm' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
      */
-    protected function get_ServiceLocator_G3tlGhlService()
+    protected function get_ServiceLocator_FITXRmService()
     {
-        return $this->privates['.service_locator.G3tlGhl'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+        return $this->privates['.service_locator.FIT_XRm'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
             'categoryRepository' => ['privates', 'App\\Repository\\CategorieRepository', 'getCategorieRepositoryService', false],
+            'questionRepository' => ['privates', 'App\\Repository\\QuestionRepository', 'getQuestionRepositoryService', false],
             'quizRepository' => ['privates', 'App\\Repository\\QuizRepository', 'getQuizRepositoryService', false],
         ], [
             'categoryRepository' => 'App\\Repository\\CategorieRepository',
+            'questionRepository' => 'App\\Repository\\QuestionRepository',
             'quizRepository' => 'App\\Repository\\QuizRepository',
-        ]);
-    }
-
-    /**
-     * Gets the private '.service_locator.Mh1RFrq' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_Mh1RFrqService()
-    {
-        return $this->privates['.service_locator.Mh1RFrq'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'App\\Controller\\MainController::activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
-            'App\\Controller\\QuizController::play' => ['privates', '.service_locator.G3tlGhl', 'get_ServiceLocator_G3tlGhlService', false],
-            'App\\Controller\\QuizController::showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController::showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController::test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
-            'App\\Controller\\RegistrationController::register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
-            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
-            'App\\Controller\\MainController:activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
-            'App\\Controller\\QuizController:play' => ['privates', '.service_locator.G3tlGhl', 'get_ServiceLocator_G3tlGhlService', false],
-            'App\\Controller\\QuizController:showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController:showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
-            'App\\Controller\\QuizController:test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
-            'App\\Controller\\RegistrationController:register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
-            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
-        ], [
-            'App\\Controller\\MainController::activation' => '?',
-            'App\\Controller\\QuizController::play' => '?',
-            'App\\Controller\\QuizController::showCategories' => '?',
-            'App\\Controller\\QuizController::showQuizzesByCategory' => '?',
-            'App\\Controller\\QuizController::test' => '?',
-            'App\\Controller\\RegistrationController::register' => '?',
-            'App\\Controller\\SecurityController::login' => '?',
-            'App\\Controller\\MainController:activation' => '?',
-            'App\\Controller\\QuizController:play' => '?',
-            'App\\Controller\\QuizController:showCategories' => '?',
-            'App\\Controller\\QuizController:showQuizzesByCategory' => '?',
-            'App\\Controller\\QuizController:test' => '?',
-            'App\\Controller\\RegistrationController:register' => '?',
-            'App\\Controller\\SecurityController:login' => '?',
         ]);
     }
 
@@ -1782,6 +1744,50 @@ class App_KernelDevDebugContainer extends Container
             'categorieRepository' => ['privates', 'App\\Repository\\CategorieRepository', 'getCategorieRepositoryService', false],
         ], [
             'categorieRepository' => 'App\\Repository\\CategorieRepository',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.WaqXuql' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_WaqXuqlService()
+    {
+        return $this->privates['.service_locator.WaqXuql'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Controller\\MainController::activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
+            'App\\Controller\\MainController::index' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
+            'App\\Controller\\QuizController::showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController::test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
+            'App\\Controller\\RegistrationController::register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
+            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
+            'App\\Controller\\MainController:activation' => ['privates', '.service_locator.5iKS6hk', 'get_ServiceLocator_5iKS6hkService', false],
+            'App\\Controller\\MainController:index' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:play' => ['privates', '.service_locator.FIT_XRm', 'get_ServiceLocator_FITXRmService', false],
+            'App\\Controller\\QuizController:showCategories' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:showQuizzesByCategory' => ['privates', '.service_locator.WRJPrYR', 'get_ServiceLocator_WRJPrYRService', false],
+            'App\\Controller\\QuizController:test' => ['privates', '.service_locator.gxnODAC', 'get_ServiceLocator_GxnODACService', false],
+            'App\\Controller\\RegistrationController:register' => ['privates', '.service_locator.flKhx93', 'get_ServiceLocator_FlKhx93Service', false],
+            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.q6jLs_L', 'get_ServiceLocator_Q6jLsLService', false],
+        ], [
+            'App\\Controller\\MainController::activation' => '?',
+            'App\\Controller\\MainController::index' => '?',
+            'App\\Controller\\QuizController::play' => '?',
+            'App\\Controller\\QuizController::showCategories' => '?',
+            'App\\Controller\\QuizController::showQuizzesByCategory' => '?',
+            'App\\Controller\\QuizController::test' => '?',
+            'App\\Controller\\RegistrationController::register' => '?',
+            'App\\Controller\\SecurityController::login' => '?',
+            'App\\Controller\\MainController:activation' => '?',
+            'App\\Controller\\MainController:index' => '?',
+            'App\\Controller\\QuizController:play' => '?',
+            'App\\Controller\\QuizController:showCategories' => '?',
+            'App\\Controller\\QuizController:showQuizzesByCategory' => '?',
+            'App\\Controller\\QuizController:test' => '?',
+            'App\\Controller\\RegistrationController:register' => '?',
+            'App\\Controller\\SecurityController:login' => '?',
         ]);
     }
 
@@ -2769,7 +2775,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.Mh1RFrq'] ?? $this->get_ServiceLocator_Mh1RFrqService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.WaqXuql'] ?? $this->get_ServiceLocator_WaqXuqlService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -2811,7 +2817,7 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.Mh1RFrq'] ?? $this->get_ServiceLocator_Mh1RFrqService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.WaqXuql'] ?? $this->get_ServiceLocator_WaqXuqlService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -4649,10 +4655,27 @@ class App_KernelDevDebugContainer extends Container
     {
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AbstractListener.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/AccessListener.php';
+
+        return $this->privates['security.access_listener'] = new \Symfony\Component\Security\Http\Firewall\AccessListener(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->privates['debug.security.access.decision_manager'] ?? $this->getDebug_Security_Access_DecisionManagerService()), ($this->privates['security.access_map'] ?? $this->getSecurity_AccessMapService()), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()));
+    }
+
+    /**
+     * Gets the private 'security.access_map' shared service.
+     *
+     * @return \Symfony\Component\Security\Http\AccessMap
+     */
+    protected function getSecurity_AccessMapService()
+    {
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMapInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMap.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/http-foundation/RequestMatcherInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/http-foundation/RequestMatcher.php';
 
-        return $this->privates['security.access_listener'] = new \Symfony\Component\Security\Http\Firewall\AccessListener(($this->services['security.token_storage'] ?? $this->getSecurity_TokenStorageService()), ($this->privates['debug.security.access.decision_manager'] ?? $this->getDebug_Security_Access_DecisionManagerService()), ($this->privates['security.access_map'] ?? ($this->privates['security.access_map'] = new \Symfony\Component\Security\Http\AccessMap())), ($this->privates['security.authentication.manager'] ?? $this->getSecurity_Authentication_ManagerService()));
+        $this->privates['security.access_map'] = $instance = new \Symfony\Component\Security\Http\AccessMap();
+
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/game'), [0 => 'ROLE_USER'], NULL);
+
+        return $instance;
     }
 
     /**
@@ -4746,10 +4769,8 @@ class App_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/Firewall/ChannelListener.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/AuthenticationEntryPointInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/EntryPoint/RetryAuthenticationEntryPoint.php';
-        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMapInterface.php';
-        include_once \dirname(__DIR__, 4).'/vendor/symfony/security-http/AccessMap.php';
 
-        return $this->privates['security.channel_listener'] = new \Symfony\Component\Security\Http\Firewall\ChannelListener(($this->privates['security.access_map'] ?? ($this->privates['security.access_map'] = new \Symfony\Component\Security\Http\AccessMap())), new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()));
+        return $this->privates['security.channel_listener'] = new \Symfony\Component\Security\Http\Firewall\ChannelListener(($this->privates['security.access_map'] ?? $this->getSecurity_AccessMapService()), new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), ($this->privates['monolog.logger.security'] ?? $this->getMonolog_Logger_SecurityService()));
     }
 
     /**
@@ -4870,7 +4891,7 @@ class App_KernelDevDebugContainer extends Container
         $b = ($this->services['router'] ?? $this->getRouterService());
 
         $c = new \Symfony\Component\Security\Http\HttpUtils($b, $b, '{^https?://%s$}i', '{^https://%s$}i');
-        $d = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $c, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($c, '/'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'app_logout']);
+        $d = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $c, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($c, 'app_home'), ['csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => 'app_logout']);
         $d->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(($this->privates['security.csrf.token_storage'] ?? $this->getSecurity_Csrf_TokenStorageService())));
         $d->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 

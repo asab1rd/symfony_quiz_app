@@ -15,4 +15,5 @@ quiz/vendor/
 quiz/.phpunit
 quiz/.phpunit.result.cache
 quiz/phpunit.xml
+quiz/var
 ###< symfony/phpunit-bridge ###

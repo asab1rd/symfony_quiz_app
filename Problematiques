@@ -1,0 +1,17 @@
+Comment jouer :
+    On lui passe une categorie :
+            Si la categorie est presente dans Quiz : (on a déjà joué)
+                    Si on a pas repondu à toutes les questions (il faut un attribut is finished) :
+                            Alors on joue a la question actuelle
+                    Sinon on lui demande s'il veut rejouer :
+                            on lui affiche le score de la derniere fois joué
+                            s'il veut jouer :
+                                Il faut recreer une nouvelle ligne dans quizz
+                            sinon :
+                                on lui propose d'autres quiz
+            sinon  :
+
+                prendre la categorie,
+                prendre l'actuel joueur
+                creer un nouveau quizz
+                

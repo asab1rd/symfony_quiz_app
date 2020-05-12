@@ -428,3 +428,5 @@ af70a7,::1,GET,https://localhost:8000/,1589243053,,200
 029a74,::1,GET,https://localhost:8000/login,1589243060,,200
 6f0be2,::1,GET,https://localhost:8000/login,1589243096,,200
 348273,::1,GET,https://localhost:8000/register,1589243101,,200
+097529,::1,GET,https://localhost:8000/register,1589243149,,200
+e8ae66,::1,GET,https://localhost:8000/,1589243154,,200

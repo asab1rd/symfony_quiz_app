@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/quiz' => [[['_route' => 'quiz', '_controller' => 'App\\Controller\\QuizController::index'], null, null, null, false, false, null]],
+        '/quizzes' => [[['_route' => 'app_my_quizzes', '_controller' => 'App\\Controller\\QuizController::myquizzes'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'quiz_show_categories', '_controller' => 'App\\Controller\\QuizController::showCategories'], null, null, null, false, false, null]],
         '/test/user' => [[['_route' => 'quiz_test', '_controller' => 'App\\Controller\\QuizController::test'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -38,11 +39,8 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/activation/([^/]++)(*:189)'
-                .'|/game/(?'
-                    .'|(\\d+)/(\\d+)(*:217)'
-                    .'|([^/]++)(*:233)'
-                .')'
+                .'|/game/([^/]++)(*:183)'
+                .'|/activation/([^/]++)(*:211)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -53,10 +51,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        189 => [[['_route' => 'active', '_controller' => 'App\\Controller\\MainController::activation'], ['id'], null, null, false, true, null]],
-        217 => [[['_route' => 'quiz_show_quizes', '_controller' => 'App\\Controller\\QuizController::showQuizzesByCategory'], ['id', 'qst'], null, null, false, true, null]],
-        233 => [
-            [['_route' => 'quiz_play', '_controller' => 'App\\Controller\\QuizController::play'], ['categoryId'], ['GET' => 0, 'POST' => 1], null, false, true, null],
+        183 => [[['_route' => 'quiz_play', '_controller' => 'App\\Controller\\QuizController::play'], ['categoryId'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        211 => [
+            [['_route' => 'active', '_controller' => 'App\\Controller\\SecurityController::activation'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

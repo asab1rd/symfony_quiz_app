@@ -15,24 +15,12 @@ class MainController extends AbstractController
      */
     public function index(CategorieRepository $categorieRepository)
     {
+        $user = $this->get('security.authorization_checker')->isGranted("ROLE_ADMIN");
+        dd($user);
         $categories = $categorieRepository->findAll();
         // dd($categories);
         return $this->render('main/index.html.twig', [
             'categories' => $categories,
         ]);
-    }
-
-    /**
-     * @Route("/activation/{id}", name="active")
-     */
-    public function activation(int $id, UserRepository $user)
-    {
-        $entityManager = $this->getDoctrine()->getManager();
-        $active = $user->find($id);
-
-        $active->setStatus('active');
-        $entityManager->persist($active);
-        $entityManager->flush();
-        return $this->render('main/activation.html.twig');;
     }
 }

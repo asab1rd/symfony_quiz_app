@@ -85,13 +85,13 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
 
         // line 3
         echo "
-<div class=\"example-wrapper\">
-  <p class=\"container\">
+<div class=\"row justify-content-around mt-5\">
+  <div class=\"alert alert-primary mt-5\" role=\"alert\">
     ";
         // line 6
         echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 6, $this->source); })()), "html", null, true);
         echo "
-  </p>
+  </div>
 </div>
 ";
         
@@ -122,10 +122,10 @@ class __TwigTemplate_43deb91708049a613787914a058bbd726099bf8360cde32a64c9cc98a29
         return new Source("{% extends 'base.html.twig' %} {% block title %}Hello QuizController!{% endblock
 %} {% block body %}
 
-<div class=\"example-wrapper\">
-  <p class=\"container\">
+<div class=\"row justify-content-around mt-5\">
+  <div class=\"alert alert-primary mt-5\" role=\"alert\">
     {{ message }}
-  </p>
+  </div>
 </div>
 {% endblock %}
 ", "quiz/index.html.twig", "/Users/artkodes/Projects/MVC_My_Quiz/quizz/templates/quiz/index.html.twig");

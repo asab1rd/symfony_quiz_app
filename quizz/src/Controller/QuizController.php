@@ -28,6 +28,21 @@ class QuizController extends AbstractController
         ]);
     }
     /**
+     * @Route("/quizzes", name="app_my_quizzes")
+     */
+    public function myquizzes(QuizRepository $quizRepository)
+    {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $quizzes =  $quizRepository->findBy([
+            'user' => $user,
+        ]);
+        // dd($quizzes);
+        // dd($categories);
+        return $this->render('quiz/done.html.twig', [
+            'quizzes' => $quizzes,
+        ]);
+    }
+    /**
      * @Route("/categories", name="quiz_show_categories")
      */
     public function showCategories(CategorieRepository $categorieRepository)
@@ -39,30 +54,13 @@ class QuizController extends AbstractController
             'controller_name' => 'QuizController',
         ]);
     }
-    /**
-     * @Route("/game/{id}/{qst}", name="quiz_show_quizes",  requirements={"id"="\d+","qst"="\d+"})
-     */
-    public function showQuizzesByCategory(int $id, int $qst, CategorieRepository $categorieRepository)
-    {
-
-        $reponses = [""];
-        if ($category = $categorieRepository->find($id)) {
-            $questions = $category->getQuestions();
-            if ($questions->containsKey($qst - 1)) {
-                $nextQst = $qst + 1;
-                return $this->render('quiz/quizzes.html.twig', [
-                    'question' => $questions->get($qst - 1),
-                    "nextRoute" => "/category/$id/$nextQst"
-                ]);
-            }
-        }
-    }
 
     /**
      * @Route("/game/{categoryId}", name="quiz_play", methods="GET|POST")
      */
     public function play(int $categoryId, Request $request, QuizRepository $quizRepository, CategorieRepository $categoryRepository, QuestionRepository $questionRepository)
     {
+
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $quiz = $quizRepository->findOneBy([
             'category' => $categoryId,
@@ -79,7 +77,7 @@ class QuizController extends AbstractController
             //If we arleady have played wewant to check if the game is finished
             if ($quiz->getFinished()) {
                 // If he arleady finished the quiz
-                return $this->render("quiz/index.html.twig", ["message" => "Vous avez déjà joué et fini le quizz, voici le score" . $quiz->getScore()]);
+                return $this->render("quiz/index.html.twig", ["message" => "Vous avez déjà joué et fini le quizz, voici le score : " . $quiz->getScore()]);
             } else if ($request->isMethod("POST")) {
                 // He left the quiz in the middle
                 $req = $request->request->all();
@@ -111,9 +109,6 @@ class QuizController extends AbstractController
             $data = [];
         }
         // HIS RESPONSE FROM THE FORM
-
-
-
 
         $quiz = $this->dbPlay($user, $quiz, $data, $questionRepository);
         $currentQuestion = $quiz->getCurrentQuestion();

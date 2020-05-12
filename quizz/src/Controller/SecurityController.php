@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,6 +27,20 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
+
+    /**
+     * @Route("/activation/{id}", name="active")
+     */
+    public function activation(int $id, UserRepository $user)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $active = $user->find($id);
+
+        $active->setStatus('active');
+        $entityManager->persist($active);
+        $entityManager->flush();
+        return $this->render('main/activation.html.twig');;
+    }
     /**
      * @Route("/logout", name="app_logout")
      */

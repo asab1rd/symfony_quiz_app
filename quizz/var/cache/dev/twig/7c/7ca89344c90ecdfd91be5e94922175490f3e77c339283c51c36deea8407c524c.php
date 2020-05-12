@@ -107,7 +107,10 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             // line 54
             echo "              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">My Account</a>
+                <a class=\"nav-link\" href=\"";
+            // line 55
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_quizzes");
+            echo "\">Profile</a>
               </li>
               ";
         }
@@ -266,7 +269,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     public function getDebugInfo()
     {
-        return array (  223 => 90,  205 => 6,  186 => 5,  174 => 91,  170 => 90,  163 => 85,  150 => 74,  148 => 73,  144 => 71,  138 => 68,  132 => 65,  129 => 64,  123 => 61,  120 => 60,  118 => 59,  115 => 58,  109 => 54,  107 => 53,  102 => 51,  89 => 41,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  226 => 90,  208 => 6,  189 => 5,  177 => 91,  173 => 90,  166 => 85,  153 => 74,  151 => 73,  147 => 71,  141 => 68,  135 => 65,  132 => 64,  126 => 61,  123 => 60,  121 => 59,  118 => 58,  112 => 55,  109 => 54,  107 => 53,  102 => 51,  89 => 41,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -325,7 +328,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
               </li>
               {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
               <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">My Account</a>
+                <a class=\"nav-link\" href=\"{{ path(\"app_my_quizzes\") }}\">Profile</a>
               </li>
               {% endif %}
             </div>

@@ -21,6 +21,7 @@ return [
     'quiz_show_categories' => [[], ['_controller' => 'App\\Controller\\QuizController::showCategories'], [], [['text', '/categories']], [], []],
     'quiz_play' => [['categoryId'], ['_controller' => 'App\\Controller\\QuizController::play'], [], [['variable', '/', '[^/]++', 'categoryId', true], ['text', '/game']], [], []],
     'quiz_test' => [[], ['_controller' => 'App\\Controller\\QuizController::test'], [], [['text', '/test/user']], [], []],
+    'quiz_create' => [[], ['_controller' => 'App\\Controller\\QuizController::createQuizz'], [], [['text', '/create/quizz']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'active' => [['id'], ['_controller' => 'App\\Controller\\SecurityController::activation'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activation']], [], []],

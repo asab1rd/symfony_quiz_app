@@ -906,3 +906,9 @@ d52a76,::1,GET,https://localhost:8000/,1589388866,,200
 2fb8b2,::1,GET,https://localhost:8000/login,1589388867,,200
 bc1865,::1,POST,https://localhost:8000/login,1589388877,,302
 06bb00,::1,GET,https://localhost:8000/,1589388877,,200
+9edc7c,::1,GET,https://localhost:8000/dashboard,1589390073,,200
+f9b5aa,::1,GET,https://localhost:8000/quizzes,1589390078,,200
+047fa7,::1,GET,https://localhost:8000/,1589390093,,200
+4bb93a,::1,GET,https://localhost:8000/,1589390094,,200
+d01d19,::1,GET,https://localhost:8000/logout,1589390199,,302
+e9799f,::1,GET,https://localhost:8000/,1589390199,,200

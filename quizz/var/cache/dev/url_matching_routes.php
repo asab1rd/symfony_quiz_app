@@ -18,6 +18,7 @@ return [
         '/quizzes' => [[['_route' => 'app_my_quizzes', '_controller' => 'App\\Controller\\QuizController::myquizzes'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'quiz_show_categories', '_controller' => 'App\\Controller\\QuizController::showCategories'], null, null, null, false, false, null]],
         '/test/user' => [[['_route' => 'quiz_test', '_controller' => 'App\\Controller\\QuizController::test'], null, null, null, false, false, null]],
+        '/create/quizz' => [[['_route' => 'quiz_create', '_controller' => 'App\\Controller\\QuizController::createQuizz'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],

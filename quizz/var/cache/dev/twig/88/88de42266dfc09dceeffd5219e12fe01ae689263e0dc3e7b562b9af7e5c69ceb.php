@@ -64,8 +64,8 @@ class __TwigTemplate_42da679c96f24b9b4ace319e9addfe70a7823d22aff6af4aea01fb71205
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 2
-        echo "<div class=\"container\">
-  <div class=\"row justify-content-around mt-5\">
+        echo "<div class=\"container mt-5\">
+  <div class=\"row justify-content-around m-auto mt-5 w-50\">
     <div class=\"row flex-column\">
       <h3 class=\"question\">";
         // line 5
@@ -144,8 +144,8 @@ $context["reponse"], "reponse", [], "any", false, false, false, 17), "html", nul
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %} {% block body %}
-<div class=\"container\">
-  <div class=\"row justify-content-around mt-5\">
+<div class=\"container mt-5\">
+  <div class=\"row justify-content-around m-auto mt-5 w-50\">
     <div class=\"row flex-column\">
       <h3 class=\"question\">{{ question.question }}</h3>
       <form class=\"reponse-form\" action=\"{{ nextRoute }}\" method=\"post\">

@@ -3950,9 +3950,9 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
       <call method="add">
-        <argument type="service" id=".security.request_matcher.XUyevKf"/>
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
         <argument type="collection">
-          <argument>ROLE_USER</argument>
+          <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -4363,8 +4363,8 @@
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
-    <service id=".security.request_matcher.XUyevKf" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/game</argument>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -5023,18 +5023,21 @@
         <argument key="categorieRepository" type="service" id="App\Repository\CategorieRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.JI8bzgY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.AeHbG.M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="quizRepository" type="service" id="App\Repository\QuizRepository"/>
+        <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.FIT_XRm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.kbvFd0q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="categoryRepository" type="service" id="App\Repository\CategorieRepository"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
         <argument key="questionRepository" type="service" id="App\Repository\QuestionRepository"/>
         <argument key="quizRepository" type="service" id="App\Repository\QuizRepository"/>
+        <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.gxnODAC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5064,24 +5067,26 @@
         <argument key="user" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.hIy8ucN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Cb5UonA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.WRJPrYR"/>
-        <argument key="App\Controller\QuizController::myquizzes" type="service" id=".service_locator.JI8bzgY"/>
-        <argument key="App\Controller\QuizController::play" type="service" id=".service_locator.FIT_XRm"/>
+        <argument key="App\Controller\QuizController::myquizzes" type="service" id=".service_locator.AeHbG.M"/>
+        <argument key="App\Controller\QuizController::play" type="service" id=".service_locator.kbvFd0q"/>
         <argument key="App\Controller\QuizController::showCategories" type="service" id=".service_locator.WRJPrYR"/>
         <argument key="App\Controller\QuizController::test" type="service" id=".service_locator.gxnODAC"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.flKhx93"/>
         <argument key="App\Controller\SecurityController::activation" type="service" id=".service_locator.5iKS6hk"/>
+        <argument key="App\Controller\SecurityController::adminDashboard" type="service" id=".service_locator.AeHbG.M"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.q6jLs_L"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.WRJPrYR"/>
-        <argument key="App\Controller\QuizController:myquizzes" type="service" id=".service_locator.JI8bzgY"/>
-        <argument key="App\Controller\QuizController:play" type="service" id=".service_locator.FIT_XRm"/>
+        <argument key="App\Controller\QuizController:myquizzes" type="service" id=".service_locator.AeHbG.M"/>
+        <argument key="App\Controller\QuizController:play" type="service" id=".service_locator.kbvFd0q"/>
         <argument key="App\Controller\QuizController:showCategories" type="service" id=".service_locator.WRJPrYR"/>
         <argument key="App\Controller\QuizController:test" type="service" id=".service_locator.gxnODAC"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.flKhx93"/>
         <argument key="App\Controller\SecurityController:activation" type="service" id=".service_locator.5iKS6hk"/>
+        <argument key="App\Controller\SecurityController:adminDashboard" type="service" id=".service_locator.AeHbG.M"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.q6jLs_L"/>
       </argument>
     </service>
@@ -5547,12 +5552,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.hIy8ucN"/>
+      <argument type="service" id=".service_locator.Cb5UonA"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.hIy8ucN"/>
+      <argument type="service" id=".service_locator.Cb5UonA"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5938,7 +5943,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hIy8ucN"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Cb5UonA"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

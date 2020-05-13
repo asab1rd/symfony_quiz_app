@@ -89,37 +89,85 @@ class __TwigTemplate_a3ad7cdc7d53b8d2652af531aa8b5ea11767a8573ae2dd3515d743d844e
         // line 5
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["quizzes"]) || array_key_exists("quizzes", $context) ? $context["quizzes"] : (function () { throw new RuntimeError('Variable "quizzes" does not exist.', 5, $this->source); })()));
+        $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["quiz"]) {
             // line 6
             echo "  <div class=\"card w-25 m-1\">
     <!-- Card content -->
-    <div class=\"card-body elegant-color white-text rounded-bottom\">
+    <div
+      class=\"card-body ";
+            // line 9
+            echo ((twig_get_attribute($this->env, $this->source,             // line 10
+$context["quiz"], "finished", [], "any", false, false, false, 10)) ? ("success-color-dark white-text") : ("warning-color-dark white-text"));
+            // line 13
+            echo "  rounded-bottom\"
+    >
       <!-- Title -->
       <h4 class=\"card-title\">";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["quiz"], "category", [], "any", false, false, false, 10), "name", [], "any", false, false, false, 10), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["quiz"], "category", [], "any", false, false, false, 16), "name", [], "any", false, false, false, 16), "html", null, true);
             echo "</h4>
       <hr class=\"hr-light\" />
       <!-- Text -->
       <p class=\"card-text white-text mb-4\">
-        The category of ";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["quiz"], "category", [], "any", false, false, false, 14), "name", [], "any", false, false, false, 14), "html", null, true);
+        ";
+            // line 20
+            echo ((twig_get_attribute($this->env, $this->source, $context["quiz"], "finished", [], "any", false, false, false, 20)) ? ("Finished. Bravo for this category!") : (((("Not
+        finished. Current question : " . twig_get_attribute($this->env, $this->source,             // line 21
+$context["quiz"], "currentQuestion", [], "any", false, false, false, 21)) . " <br />
+        Current score : ") . twig_get_attribute($this->env, $this->source,             // line 22
+$context["quiz"], "score", [], "any", false, false, false, 22))));
             echo "
       </p>
       <!-- Link -->
-      <a
+      ";
+            // line 25
+            if (twig_get_attribute($this->env, $this->source, $context["quiz"], "finished", [], "any", false, false, false, 25)) {
+                // line 26
+                echo "      <h5>
+        Score : ";
+                // line 27
+                echo ((0 <= twig_compare(twig_get_attribute($this->env, $this->source, $context["quiz"], "score", [], "any", false, false, false, 27), 5)) ? ((twig_get_attribute($this->env, $this->source, $context["quiz"], "score", [], "any", false, false, false, 27) . "
+        <i class=\"fas fa-thumbs-up\"></i>")) : ((twig_get_attribute($this->env, $this->source,                 // line 28
+$context["quiz"], "score", [], "any", false, false, false, 28) . "
+        <i class=\"far fa-thumbs-down\"></i>")));
+                // line 29
+                echo "
+      </h5>
+      ";
+            } else {
+                // line 32
+                echo "      <a
         href=\"game/";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["quiz"], "category", [], "any", false, false, false, 18), "id", [], "any", false, false, false, 18), "html", null, true);
-            echo "\"
+                // line 33
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["quiz"], "category", [], "any", false, false, false, 33), "id", [], "any", false, false, false, 33), "html", null, true);
+                echo "\"
         class=\"white-text d-flex justify-content-end\"
       >
-        <h5>Score : ";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["quiz"], "score", [], "any", false, false, false, 21), "html", null, true);
-            echo "</h5>
+        <h5>CONTINUE <i class=\"far fa-arrow-alt-circle-right\"></i></h5>
       </a>
+      ";
+            }
+            // line 39
+            echo "    </div>
+  </div>
+  ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 42
+            echo "  <div class=\"row justify-content-around mt-5\">
+    <div class=\"alert alert-primary mt-5\" role=\"alert\">
+      You have played no quiz at the moment.
+      <a
+      href=\"";
+            // line 46
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("quiz_show_categories");
+            echo "\"
+      class=\"dark-text d-flex justify-content-end\"
+    >
+      <h5>PLAY <i class=\"far fa-arrow-alt-circle-right\"></i></h5>
+    </a>
     </div>
   </div>
   ";
@@ -127,7 +175,7 @@ class __TwigTemplate_a3ad7cdc7d53b8d2652af531aa8b5ea11767a8573ae2dd3515d743d844e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['quiz'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 54
         echo "</div>
 ";
         
@@ -150,7 +198,7 @@ class __TwigTemplate_a3ad7cdc7d53b8d2652af531aa8b5ea11767a8573ae2dd3515d743d844e
 
     public function getDebugInfo()
     {
-        return array (  131 => 26,  120 => 21,  114 => 18,  107 => 14,  100 => 10,  94 => 6,  90 => 5,  86 => 3,  36 => 1,);
+        return array (  179 => 54,  165 => 46,  159 => 42,  152 => 39,  143 => 33,  140 => 32,  135 => 29,  132 => 28,  130 => 27,  127 => 26,  125 => 25,  119 => 22,  117 => 21,  115 => 20,  108 => 16,  103 => 13,  101 => 10,  100 => 9,  95 => 6,  90 => 5,  86 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -162,21 +210,49 @@ body %}
   {% for quiz in quizzes %}
   <div class=\"card w-25 m-1\">
     <!-- Card content -->
-    <div class=\"card-body elegant-color white-text rounded-bottom\">
+    <div
+      class=\"card-body {{
+        quiz.finished
+          ? 'success-color-dark white-text'
+          : 'warning-color-dark white-text'
+      }}  rounded-bottom\"
+    >
       <!-- Title -->
       <h4 class=\"card-title\">{{ quiz.category.name }}</h4>
       <hr class=\"hr-light\" />
       <!-- Text -->
       <p class=\"card-text white-text mb-4\">
-        The category of {{ quiz.category.name }}
+        {{ (quiz.finished ? 'Finished. Bravo for this category!' : 'Not
+        finished. Current question : '~ quiz.currentQuestion ~' <br />
+        Current score : ' ~ quiz.score) | raw}}
       </p>
       <!-- Link -->
+      {% if quiz.finished %}
+      <h5>
+        Score : {{ (quiz.score >= 5 ? quiz.score ~ '
+        <i class=\"fas fa-thumbs-up\"></i>' : quiz.score ~ '
+        <i class=\"far fa-thumbs-down\"></i>') | raw }}
+      </h5>
+      {% else %}
       <a
         href=\"game/{{ quiz.category.id }}\"
         class=\"white-text d-flex justify-content-end\"
       >
-        <h5>Score : {{ quiz.score }}</h5>
+        <h5>CONTINUE <i class=\"far fa-arrow-alt-circle-right\"></i></h5>
       </a>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class=\"row justify-content-around mt-5\">
+    <div class=\"alert alert-primary mt-5\" role=\"alert\">
+      You have played no quiz at the moment.
+      <a
+      href=\"{{ path(\"quiz_show_categories\")}}\"
+      class=\"dark-text d-flex justify-content-end\"
+    >
+      <h5>PLAY <i class=\"far fa-arrow-alt-circle-right\"></i></h5>
+    </a>
     </div>
   </div>
   {% endfor %}

@@ -104,52 +104,72 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
               </li>
               ";
         // line 53
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 54
             echo "              <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
             // line 55
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_quizzes");
-            echo "\">Profile</a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard");
+            echo "\">Dashboard</a>
               </li>
               ";
         }
         // line 58
-        echo "            </div>
-            ";
+        echo "              <li class=\"nav-item\">
+                ";
         // line 59
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             // line 60
+            echo "                <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_quizzes");
+            echo "\">Profile</a>
+                ";
+        } else {
+            // line 62
+            echo "                <a class=\"nav-link\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_quizzes");
+            echo "\">Results</a>
+
+                ";
+        }
+        // line 65
+        echo "              </li>
+
+            </div>
+            ";
+        // line 68
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 69
             echo "            <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"";
-            // line 61
+            // line 70
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">LOGOUT</a>
             </li>
             ";
         } else {
-            // line 64
+            // line 73
             echo "            <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"";
-            // line 65
+            // line 74
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">LOGIN</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"";
-            // line 68
+            // line 77
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">REGISTER</a>
             </li>
             ";
         }
-        // line 71
+        // line 80
         echo "          </ul>
 
           ";
-        // line 73
+        // line 82
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 74
+            // line 83
             echo "          <form class=\"form-inline\">
             <div class=\"md-form my-0\">
               <input
@@ -162,18 +182,18 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
           </form>
           ";
         }
-        // line 85
+        // line 94
         echo "        </div>
         <!-- Collapsible content -->
       </nav>
     </div>
     <!--/.Navbar-->
     ";
-        // line 90
+        // line 99
         $this->displayBlock('body', $context, $blocks);
         echo " ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 91
+        // line 100
         echo "  </body>
 </html>
 ";
@@ -222,7 +242,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     }
 
-    // line 90
+    // line 99
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -269,7 +289,7 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
 
     public function getDebugInfo()
     {
-        return array (  226 => 90,  208 => 6,  189 => 5,  177 => 91,  173 => 90,  166 => 85,  153 => 74,  151 => 73,  147 => 71,  141 => 68,  135 => 65,  132 => 64,  126 => 61,  123 => 60,  121 => 59,  118 => 58,  112 => 55,  109 => 54,  107 => 53,  102 => 51,  89 => 41,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  246 => 99,  228 => 6,  209 => 5,  197 => 100,  193 => 99,  186 => 94,  173 => 83,  171 => 82,  167 => 80,  161 => 77,  155 => 74,  152 => 73,  146 => 70,  143 => 69,  141 => 68,  136 => 65,  129 => 62,  123 => 60,  121 => 59,  118 => 58,  112 => 55,  109 => 54,  107 => 53,  102 => 51,  89 => 41,  60 => 14,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -326,11 +346,20 @@ class __TwigTemplate_0e3cb873c6603205e688047308c35c10a02892663cece026518ecef654e
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path(\"app_home\") }}\">Home </a>
               </li>
-              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+              {% if is_granted('ROLE_ADMIN') %}
               <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path(\"app_my_quizzes\") }}\">Profile</a>
+                <a class=\"nav-link\" href=\"{{ path(\"app_dashboard\") }}\">Dashboard</a>
               </li>
               {% endif %}
+              <li class=\"nav-item\">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a class=\"nav-link\" href=\"{{ path(\"app_my_quizzes\") }}\">Profile</a>
+                {% else %}
+                <a class=\"nav-link\" href=\"{{ path(\"app_my_quizzes\") }}\">Results</a>
+
+                {% endif %}
+              </li>
+
             </div>
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <li class=\"nav-item\">

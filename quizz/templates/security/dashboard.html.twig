@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %} {% block title %}Log in!{% endblock %} {% block
+body %}
+<div class="container">
+  <div class="d-flex justify-content-around mt-4">
+    <h3 class="text-dark">Users Stats</h3>
+  </div>
+  <hr class="hr-dark" />
+  {% for user in users %} {% set isAnonymous = user.status is same as
+  ("anonymous") %}
+  <div class="card user m-3">
+    <div
+      class="card-body {{
+        isAnonymous
+          ? 'primary-color-dark
+          warning-color'
+          : 'elegant-color text-white'
+      }}  rounded-bottom"
+    >
+      <h4 class="card-title">
+        {{ isAnonymous ? "Anonymous : " ~ user.email : "Email : " ~ user.email }}
+      </h4>
+      <hr class="hr-light" />
+      <div class="card-user-info">
+        {% if isAnonymous %}
+        <p class="mb-4">
+          This user is an anonymous user and will be deleted soon
+        </p>
+        {% endif %} {####################### QUIZZ ANALYSIS
+        ########################} {% set lastQuiz = 0 %} {% set doneQuizzes = 0
+        %} {% set notFinished = 0 %}{% set bestScore = 0 %} {% for quiz in
+        quizzes %} {% if quiz.user == user %} {% set bestScore = quiz.score >
+        bestScore ? quiz.score : bestScore %} {% set doneQuizzes = doneQuizzes +
+        1 %} {% set notFinished = quiz.finished == 0 ? notFinished + 1 :
+        notFinished %} {% set lastQuiz = quiz %} {% endif %} {% endfor %}
+
+        <p class="mb-2">TOTAL DONE QUIZZES : {{ doneQuizzes }}</p>
+        {% if notFinished > 0 %}
+        <p class="mb-2">NOT FINISHED QUIZZES : {{ notFinished }}</p>
+        {% endif %}
+        <p class="mb-2">BEST SCORE : {{ bestScore }}</p>
+        {% if lastQuiz is not same as(0) %}
+        <p class="mb-2">LAST QUIZ : {{ lastQuiz.category.name }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

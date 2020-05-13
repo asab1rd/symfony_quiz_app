@@ -25,4 +25,5 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'active' => [['id'], ['_controller' => 'App\\Controller\\SecurityController::activation'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/activation']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'app_dashboard' => [[], ['_controller' => 'App\\Controller\\SecurityController::adminDashboard'], [], [['text', '/dashboard']], [], []],
 ];

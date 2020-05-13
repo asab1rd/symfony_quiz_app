@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class QuizController extends AbstractController
@@ -30,9 +31,18 @@ class QuizController extends AbstractController
     /**
      * @Route("/quizzes", name="app_my_quizzes")
      */
-    public function myquizzes(QuizRepository $quizRepository)
+    public function myquizzes(QuizRepository $quizRepository, UserRepository $userRepository)
     {
-        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $user = $this->get('security.token_storage')->getToken();
+        if ($user->getUser() === "anon.") {
+            //We want check if this anonymous user arleady played in our database
+            $anonymousUser = $userRepository->findOneBy([
+                'email' => $user->getSecret(),
+            ]);
+            $user = $anonymousUser ?? $user->getUser();
+        } else {
+            $user = $user->getUser();
+        }
         $quizzes =  $quizRepository->findBy([
             'user' => $user,
         ]);
@@ -49,19 +59,31 @@ class QuizController extends AbstractController
     {
         $categories = $categorieRepository->findAll();
 
-        dd($categories);
-        return $this->render('quiz/index.html.twig', [
-            'controller_name' => 'QuizController',
+        return $this->render('main/index.html.twig', [
+            'categories' => $categories,
         ]);
     }
 
     /**
      * @Route("/game/{categoryId}", name="quiz_play", methods="GET|POST")
      */
-    public function play(int $categoryId, Request $request, QuizRepository $quizRepository, CategorieRepository $categoryRepository, QuestionRepository $questionRepository)
+    public function play(int $categoryId, Request $request, QuizRepository $quizRepository, CategorieRepository $categoryRepository, QuestionRepository $questionRepository, UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder)
     {
-
-        $user = $this->get('security.token_storage')->getToken()->getUser();
+        //                      USER CONFIG                             //
+        $user = $this->get('security.token_storage')->getToken();
+        if ($user->getUser() === "anon.") {
+            //We want check if this anonymous user arleady played in our database
+            $anonymousUser = $userRepository->findOneBy([
+                'email' => $user->getSecret(),
+            ]);
+            if (!$anonymousUser) {
+                //If he doest not exist we create him a temporary account
+                $anonymousUser = $this->createAnonymousUser($user->getSecret(), $passwordEncoder);
+            }
+            $user = $anonymousUser;
+        } else {
+            $user = $user->getUser();
+        }        //                      END USER CONFIG
         $quiz = $quizRepository->findOneBy([
             'category' => $categoryId,
             'user' => $user->getId(),
@@ -112,9 +134,15 @@ class QuizController extends AbstractController
 
         $quiz = $this->dbPlay($user, $quiz, $data, $questionRepository);
         $currentQuestion = $quiz->getCurrentQuestion();
+        if ($quiz->getFinished()) {
+            //IF HE JUST FINISHED
+            return $this->render("quiz/index.html.twig", ["message" => "Felicitations vous venez de finir le quiz, voici le score : " . $quiz->getScore()]);
+        }
         return $this->render('quiz/quizzes.html.twig', [
             'question' => $questions->get($currentQuestion - 1),
-            "nextRoute" => "/game/$categoryId"
+            "nextRoute" => "/game/$categoryId",
+            "quiz" => $quiz
+
         ]);
     }
 
@@ -170,6 +198,24 @@ class QuizController extends AbstractController
         $game->setFinished($quiz['finished']);
         $game->setCurrentQuestion($quiz['current']);
         return $game;
+    }
+
+    private function createAnonymousUser(string $secret, UserPasswordEncoderInterface $passwordEncoder): User
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = new User;
+        $user->setEmail($secret);
+        $user->setRoles(["ROLE_ANONYMOUS"]);
+        $user->setPassword(
+            $passwordEncoder->encodePassword(
+                $user,
+                $secret
+            )
+        );
+        $user->setStatus("anonymous");
+        $entityManager->persist($user);
+        $entityManager->flush();
+        return $user;
     }
     /**
      * @Route("/test/user", name="quiz_test",  )

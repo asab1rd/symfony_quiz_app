@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\QuizRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,5 +48,16 @@ class SecurityController extends AbstractController
     public function logout()
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    /**
+     * @Route("/dashboard",name="app_dashboard")
+     */
+    public function adminDashboard(UserRepository $userRepository, QuizRepository $quizRepository)
+    {
+        $users = $userRepository->findAll();
+        $quizzes = $quizRepository->findAll();
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        return $this->render('security/dashboard.html.twig', ["users" => $users, "quizzes" => $quizzes]);
     }
 }

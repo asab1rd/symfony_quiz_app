@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %} {% block body %}
-<div class="container">
-  <div class="row justify-content-around mt-5">
+<div class="container mt-5">
+  <div class="row justify-content-around m-auto mt-5 w-50">
     <div class="row flex-column">
       <h3 class="question">{{ question.question }}</h3>
       <form class="reponse-form" action="{{ nextRoute }}" method="post">

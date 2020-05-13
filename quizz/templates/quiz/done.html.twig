@@ -5,21 +5,49 @@ body %}
   {% for quiz in quizzes %}
   <div class="card w-25 m-1">
     <!-- Card content -->
-    <div class="card-body elegant-color white-text rounded-bottom">
+    <div
+      class="card-body {{
+        quiz.finished
+          ? 'success-color-dark white-text'
+          : 'warning-color-dark white-text'
+      }}  rounded-bottom"
+    >
       <!-- Title -->
       <h4 class="card-title">{{ quiz.category.name }}</h4>
       <hr class="hr-light" />
       <!-- Text -->
       <p class="card-text white-text mb-4">
-        The category of {{ quiz.category.name }}
+        {{ (quiz.finished ? 'Finished. Bravo for this category!' : 'Not
+        finished. Current question : '~ quiz.currentQuestion ~' <br />
+        Current score : ' ~ quiz.score) | raw}}
       </p>
       <!-- Link -->
+      {% if quiz.finished %}
+      <h5>
+        Score : {{ (quiz.score >= 5 ? quiz.score ~ '
+        <i class="fas fa-thumbs-up"></i>' : quiz.score ~ '
+        <i class="far fa-thumbs-down"></i>') | raw }}
+      </h5>
+      {% else %}
       <a
         href="game/{{ quiz.category.id }}"
         class="white-text d-flex justify-content-end"
       >
-        <h5>Score : {{ quiz.score }}</h5>
+        <h5>CONTINUE <i class="far fa-arrow-alt-circle-right"></i></h5>
       </a>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="row justify-content-around mt-5">
+    <div class="alert alert-primary mt-5" role="alert">
+      You have played no quiz at the moment.
+      <a
+      href="{{ path("quiz_show_categories")}}"
+      class="dark-text d-flex justify-content-end"
+    >
+      <h5>PLAY <i class="far fa-arrow-alt-circle-right"></i></h5>
+    </a>
     </div>
   </div>
   {% endfor %}

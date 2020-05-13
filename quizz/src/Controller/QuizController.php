@@ -243,4 +243,16 @@ class QuizController extends AbstractController
         $entityManager->persist($game);
         $entityManager->flush();
     }
+
+    /**
+     * @Route("/create/quizz", name="quiz_create",  )
+     */
+    public function createQuizz()
+    {
+
+        // $category = new Categorie;
+        // $category->setName("");
+        // $category->set
+        return new Response("not allowed");
+    }
 }

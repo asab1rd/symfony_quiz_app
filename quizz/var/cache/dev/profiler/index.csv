@@ -894,3 +894,15 @@ cd3b64,::1,GET,https://localhost:8000/quizzes,1589326037,,200
 7445f1,::1,GET,https://localhost:8000/,1589326051,,200
 1d0a0b,::1,GET,https://localhost:8000/logout,1589326059,,302
 9ad644,::1,GET,https://localhost:8000/,1589326059,,200
+2bee4e,::1,GET,https://localhost:8000/,1589388668,,200
+02fc2f,::1,GET,https://localhost:8000/favicon.ico,1589388669,a6aa85,404
+a6aa85,::1,GET,https://localhost:8000/favicon.ico,1589388669,,404
+9a2605,::1,GET,https://localhost:8000/quizzes,1589388680,,200
+ef6835,::1,GET,https://localhost:8000/,1589388682,,200
+204acc,::1,GET,https://localhost:8000/,1589388858,,200
+0f5a0a,::1,GET,https://localhost:8000/,1589388861,,200
+85a858,::1,GET,https://localhost:8000/quizzes,1589388862,,200
+d52a76,::1,GET,https://localhost:8000/,1589388866,,200
+2fb8b2,::1,GET,https://localhost:8000/login,1589388867,,200
+bc1865,::1,POST,https://localhost:8000/login,1589388877,,302
+06bb00,::1,GET,https://localhost:8000/,1589388877,,200

@@ -2,18 +2,17 @@
 apprentissage
 mydb.txt
 ###> symfony/framework-bundle ###
-quiz/.env.local
-quiz/.env.local.php
-quiz/.env.*.local
-quiz/config/secrets/prod/prod.decrypt.private.php
-quiz/public/bundles/
-quiz/var/
-quiz/vendor/
+quizz/.env.local
+quizz/.env.local.php
+quizz/.env.*.local
+quizz/config/secrets/prod/prod.decrypt.private.php
+quizz/public/bundles/
+quizz/var/
+quizz/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
-quiz/.phpunit
-quiz/.phpunit.result.cache
-quiz/phpunit.xml
-quiz/var
+quizz/.phpunit
+quizz/.phpunit.result.cache
+quizz/phpunit.xml
 ###< symfony/phpunit-bridge ###
